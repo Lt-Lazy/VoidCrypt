@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <link rel="stylesheet" type="text/css" href="Css.css" />
-<script defer src="JS.js"></script>
+
 
 <html>
 
@@ -10,27 +10,19 @@
             
   </head>
 
-  <body>    
-    
-    <div class="navbar">
-      <a href="index.html">Home</a>
-      <a href="News.html">News</a>
-      <div class="dropdown">
-        <button class="dropbtn">Dropdown 
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="About.html">About</a>
-          <a href="Tips: u cant cd this! ">lore</a>
-          <a href="Tips: I like the terminal">Decryption</a>
-        </div>
-      </div> 
-    </div>
+  <body>
 
+    <div class="url-Enter-Div-Index">
+      <input type="button" value="Enter" id="enter-Btn-Index">
+      <input type="text" value="voidcrypt.org" id="url-Bar-Index">
+    </div>
     <Div id="body-Div">
 
       <h1 id="my-Header">Welcome to VoidCrypt!</h1>
+      <h5 id="textLink">Your first task is to find the about page. And please use the built-in url over the welcome text :) <br> You can ofcourse use the real url search, it actually may be necessay in some task..? But when it comes to internal tasks its the built-in one u shall use.</h5>
       
+      
+
       <!-- easter egg 3 -->
       <div onclick="alert('Easter egg nr: 3/9')">
       <img class="inter-Eye" src="Images/eyes-icon-0.png" alt="watching" style="width:42px;height:42px;">
@@ -43,7 +35,7 @@
       <h5 id="html-Code-Home">Void@linux-desktop:/tmp/tutorial$ mkdir dir1 dir2 dir3</h5>
       <h5 id="html-Code-Home">Void@linux-desktop:/tmp/tutorial$ mkdir</h5>
       <h5 class="html-Code-Home-White">mkdir: missing operand</h5>
-      <h5 class="html-Code-Home-White">Try 'mkdir --help' for more information</h5>
+      <h5 class="html-Code-Home-White">Try 'help' for more information</h5>
       <h5 id="html-Code-Home">Void@linux-desktop:/tmp/tutorial$ cd ..</h5>
       <h5 id="html-Code-Home">Void@linux-desktop:/tmp$ cd ..</h5>
       <h5 id="html-Code-Home">Void@linux-desktop:~$ cd ..</h5>
@@ -53,11 +45,26 @@
       <div id="output-Div">
         </h5></h5>
       </div>
+
+      <div id="output-Div1">
+      </h5></h5>
+      </div>
       
       <input id="linux-Input" type="text" placeholder="Terminal">
       <input id="enter-Btn" type="button" value="Enter">
       
+      <div id="output-Div1">
+      </h5></h5>
+      </div>
+      
+      
       <script>
+
+        var torBrowser = 0;
+
+        var enterBtnIndex = document.getElementById("enter-Btn-Index");
+        var urlBarIndex = document.getElementById("url-Bar-Index");
+        var outputDiv1 = document.getElementById("output-Div1");
 
         var enterBtn = document.getElementById("enter-Btn");
         var userInput = document.getElementById("linux-Input");
@@ -69,6 +76,9 @@
 
         green terminal text:
         <h5 id="html-Code-Home"></h5>
+
+        pulsating text:
+        <h5 id="pulsating-Text"></h5>
 
         */
         function terminalFunction(){
@@ -102,6 +112,14 @@
               </h5`
           }if(userInput.value == "clear"){
             document. location. reload()
+          }if(userInput.value == "tor.program"){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">tor.program is an web browser that let you access the dark web</h5>
+            <h5 class="html-Code-Home-White">To use tor as browser type "start tor.program"</h5>
+
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html: </h5>
+
+            `;
           }
           
         }
@@ -239,18 +257,15 @@
           
           }
 
-
-
         }
+
+          /* ls, cat and cd commands */
 
         function lsCatCdCommand(){
           if(userInput.value == "ls"){
             outputDiv.innerHTML += `
-            <h5 class="html-Code-Home-White">News.html</h5>
-            <h5 class="html-Code-Home-White">About.html</h5>
-            <h5 class="html-Code-Home-White">Decryption.html</h5>
-            <h5 class="html-Code-Home-White">lore.html</h5>
             <h5 class="html-Code-Home-White">Programs.folder</h5>
+            <h5 class="html-Code-Home-White">Websitelist.folder</h5>
             <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
             
           `;
@@ -262,25 +277,31 @@
           <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
           `;
 
-          }if(userInput.value == "ls Programs.folder"){
+          }if(userInput.value == "cd Programs.folder"){
           outputDiv.innerHTML += `
           <h5 class="html-Code-Home-White">nmap.program</h5>
+          <h5 class="html-Code-Home-White">tor.program</h5>
           <h5 id="html-Code-Home">Void@linux-desktop:/index.html/Programs.folder:</h5>
 
           `;
-          }if(userInput.value == "cd About.html"){
-            window.location.href="About.html";
-          }if(userInput.value == "cd News.html"){
-            window.location.href="News.html";
-          }if(userInput.value == "cd Decryption.html"){
-            window.location.href="Decryption.html";
-          }if(userInput.value == "cd lore.html"){
-            window.location.href="lore.html";
+          }if(userInput.value == "cd Websitelist.folder"){
+          outputDiv.innerHTML += `
+          <h5 class="html-Code-Home-White"></h5>
+          <h5 class="html-Code-Home-White">voidcrypt.org/about</h5>
+          <h5 class="html-Code-Home-White">voidcrypt.org/decryption</h5>
+          <h5 class="html-Code-Home-White">silk-road.onion</h5>
+          <h5 class="html-Code-Home-White">voidcrypt.org/lore</h5>
+          <h5 class="html-Code-Home-White">voidcrypt.org/news</h5>
+          
+          <h5 id="html-Code-Home">Void@linux-desktop:/index.html/Websitelist.folder:</h5>
+
+          `;
+
           }if(userInput.value == "cd .."){
             outputDiv.innerHTML += `
             <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
             
-            `;
+          `;
 
             /* cat commands start */
           }if(userInput.value == "cat About.html"){
@@ -319,19 +340,102 @@
             <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
             `;
           }
+          
+        
         }
-        
-        
+
+        /* Start programs commands */
+
+        function startPrograms(){
+          if(userInput.value == "start tor.program"){
+            document.getElementById("torBrowser");
+            torBrowser = torBrowser + 1;
+            
+          }
+          torRunning();
+        }
+
+        function torRunning(){
+          if(torBrowser == 1 && userInput.value == "start tor.program"){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">Starting tor.program...</h5>
+            `;
+
+            setTimeout(function(pingScanHack){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">Tor browser running, you can now enter the dark web</h5>
+            <h5 class="html-Code-Home-White">Which means you get access to url's ending with ".onion"</h5>
+            <h5 class="html-Code-Home-White">If you type "clear" in terminal or refresh the site, Tor will stop running</h5>
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
+            `;
+            
+            }, 3000);
+
+            setTimeout(function(pingScanHack1){
+            outputDiv1.innerHTML += `
+            <input id="pulsate-Text" type="text" value="TOR IS RUNNING">
+            
+            `;
+            
+            }, 3200);
+
+            
+            
+          }else if(torBrowser >= 1 && userInput.value == "start tor.program"){
+            alert("Tor was already running! Tor has shutdown");
+            document. location. reload()
+          }
+          
+        }
+
         enterBtn.addEventListener('click',() => {    
         terminalFunction();
         nmapCommand();  
         pingCommand();  
         lsCatCdCommand();
+        startPrograms();
+      
         });
 
+        /* End Index */
 
+        function urlSearch(){
+          if(urlBarIndex.value == "https://silk-road.onion" && torBrowser >= 1){
+            window.location.href = "Silk-Road-onion.html";
+
+          }else if(urlBarIndex.value == "silk-road.onion" && torBrowser >= 1){
+            window.location.href = "Silk-Road-onion.html";
+
+          }else if(urlBarIndex.value == "https://voidcrypt.org"){
+            alert("You are here...");
+
+          }else if(urlBarIndex.value == "voidcrypt.org"){
+            alert("You are here...");
+
+          }else if(urlBarIndex.value == "voidcrypt.org/about"){
+            window.location.href = "About.html";
+
+          }else if(urlBarIndex.value == "voidcrypt.org/decryption"){
+            window.location.href = "Decryption.html";
+
+          }else if(urlBarIndex.value == "voidcrypt.org/news"){
+            window.location.href = "News.html";
+
+          }else{
+            alert(`Url dont support or could not find "${urlBarIndex.value}", if you typed https:// before, try without, or turn on Tor Browser`);
+          }
+          
+        }
+
+
+
+        enterBtnIndex.addEventListener('click',() => {    
+        urlSearch();
+        });
+        
       </script>
       
+
       <div class="mid-Row"></div>
       
       

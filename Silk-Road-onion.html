@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unsafe browser</title>
+    <link rel="stylesheet" type="text/css" href="Css.css" />
+    
+</head>
+
+<body>
+    <div class="url-Enter-Div-Silk">
+        <input type="button" value="Enter" id="enter-Btn-Silk">
+        <input type="text" value="silk-road.onion" id="url-Bar-Silk">
+    </div>
+
+    <div id="body-Div-Silk">
+    
+        <div class="container-Img-Text">
+            <div class="image-Silk">
+                <img id="silk-Img" src="Images/Silk_Road_icon.png" alt="">
+            </div>
+            <div class="silk-Img-Text">
+              <h2 id="header-Silk">Silk Road - Under maintenance</h2>
+            </div>
+        </div>
+        
+        <div class="search-Div-Silk">
+        <input type="text" placeholder="Search" id="url-Bar-Silk">
+        <input type="button" value="Go" id="enter-Btn-Silk">
+        </div>
+        <Div class="link-Text-Silk">
+          
+          <input type="button" value="Drugs">
+          <input type="button" value="Jewelery">
+          <input type="button" value="Weapons">
+          <input type="button" value="Food">
+          <input type="button" value="Services">
+          <input type="button" value="Technology">
+          <input type="button" value="Collectibles">
+          
+        </Div>
+          
+        
+        <div class="post-Silk-Div">
+            <h1>Kush per G</h1>
+            <div class="post-Silk-Div1">
+                <img class="post-Silk-Img" src="Images/Marijuana-Img.png" alt="">
+                <h2>AKA premium OG kush = <br>0,000037BTC per G</h2>
+            </div>
+        
+        </div>
+
+        <div class="post-Silk-Div">
+            <h1>Kush per G</h1>
+            <div class="post-Silk-Div1">
+                <img class="post-Silk-Img" src="Images/Marijuana-Img.png" alt="">
+                <h2>AKA premium OG kush = <br>0,000037BTC per G</h2>
+            </div>
+        
+        </div>
+
+        <script>
+
+        var enterBtnSilk = document.getElementById("enter-Btn-Silk");
+        var urlBarSilk = document.getElementById("url-Bar-Silk");
+        
+        function urlSearchSilk(){
+          if(urlBarSilk.value == "https://voidcrypt.org"){
+            window.location.href = "index.html";
+
+          }else if(urlBarSilk.value == "voidcrypt.org"){
+            window.location.href = "index.html";
+
+          }else if(urlBarSilk.value == "https://silk-road.onion"){
+            alert("You are already here...");
+
+          }else if(urlBarSilk.value == "silk-road.onion"){
+            alert("You are already here...");
+
+          }else if(urlBarSilk.value == "voidcrypt.org/about"){
+            window.location.href = "About.html";
+
+          }else if(urlBarSilk.value == "voidcrypt.org/decryption"){
+            window.location.href = "Decryption.html";
+
+          }else if(urlBarSilk.value == "voidcrypt.org/news"){
+            window.location.href = "News.html";
+
+          }else{
+            alert(`Url dont support or could not find "${urlBarSilk.value}", if you typed https:// before, try without`);
+          }
+          
+        }
+
+
+
+        enterBtnSilk.addEventListener('click',() => {    
+        urlSearchSilk();
+        });
+
+        </script>
+
+
+
+    </div>
+
+
+</body>
+</html>

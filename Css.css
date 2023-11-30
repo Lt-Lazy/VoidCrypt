@@ -4,14 +4,11 @@ body {
     margin-left: auto;
     margin-right: auto ;
     margin-top: 0%;
-        
+    font-family: Arial, Helvetica, sans-serif;    
 }
 
 /* start of dropdown code */
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-}
   
 .navbar {
     overflow: hidden;
@@ -85,6 +82,7 @@ body {
     
 }
 
+
 #body-Div{
     
     margin-left: 3%;
@@ -92,6 +90,7 @@ body {
     margin-bottom: 3%;
     background-color:rgb(0, 2, 26);
 }
+
 
 #my-Header {
     color: rgb(8, 247, 8);
@@ -169,12 +168,21 @@ body {
     
 }
 
+#pulsate-Text-Red{
+    animation: pulseRed 5s infinite;
+}
+
+#pulsate-Text-White{
+    animation: pulseWhite 1s infinite;
+}
+
 #pulsate-Text{
     width: 200px;
   height: 100%;
   animation: pulse 5s infinite;
   
 }
+
 @keyframes pulse {
   0% {
     color: orange;
@@ -185,6 +193,27 @@ body {
   100% {
     color: orange;
   }
+}
+
+@keyframes pulseRed {
+    0% {
+      color: rgb(255, 0, 0);
+    }
+    50%{
+      opacity: 0;
+    }
+    100% {
+      color: rgb(0, 8, 255);
+    }
+}
+
+@keyframes pulseWhite {
+    0% {
+      color: rgb(255, 255, 255);
+    }
+    100%{
+      opacity: 0;
+    }
 }
 
 
@@ -208,7 +237,12 @@ body {
 /* SILK ROAD */
 #body-Div-Silk{
     background-color: #ffffff;
-    margin: 2%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-bottom: 20%;
+
     
 }
 
@@ -227,20 +261,11 @@ body {
     grid-template-columns: 1fr 17fr;
     
 }
-   
-.silk-Img-Text {
-    font-size: 20px;
 
-}
-
-#search-Bar-Silk{
-   left: 50%;
-
-}
-
-.search-Div-Silk{
-    text-align: center;
-
+#verdi-Info{
+    color: green; 
+    text-align: left;
+    
 }
 
 .link-Text-Silk{
@@ -251,17 +276,17 @@ body {
     
 }
 
-
 .post-Silk-Div{
     outline-style: auto;
-    width: fit-content;
-    background-color: rgb(185, 185, 185);
+    
+    background-color: rgb(225, 225, 225);
+    text-align: center;
     
 
 }
 
 .post-Silk-Img{
-    width: 35%;
+    width: 20%;
     
 }
 
@@ -275,7 +300,79 @@ body {
 
 }
 
-/* SILK ROAD */
+/* SILK ROAD END */
 
+/* PDF */
+
+#body-Leaks{
+    background-color: rgb(189, 189, 189);
+    padding-left: 15%;
+    padding-right: 15%;
+    
+    
+}
+    
+#pdf-Body{
+    background-color: rgb(248, 246, 237);
+    padding-left: 10%;
+    box-shadow: 12px 0 15px -4px rgba(0, 0, 0, 0.8), -12px 0 8px -4px rgba(0, 0, 0, 0.8);
+    padding-right: 10%;
+    padding-bottom: 10%;
+    opacity: 0%;
+    
+}
+
+#pdf-Content{
+    background-color: rgb(248, 246, 237);
+    
+
+}
+
+#pdf-Image{
+    outline: grey; 
+    outline-style:solid ; 
+    position: absolute; 
+    transform: rotate(10deg); 
+    width: 200px; 
+    margin: 2%;
+    right: 20%;
+    box-shadow: 12px 0 15px -4px rgba(0, 0, 0, 0.8), -12px 0 8px -4px rgba(0, 0, 0, 0.8);
+    
+}
+
+#confidential{
+    text-align: left;
+    color: red;
+    padding-top: 3%;
+    opacity: 50%;
+    
+    
+}
+
+#pdf-Icon{
+    width: 40px;
+    
+}
+
+#url-Bar-Pdf{
+    left: 50%;
+    width: 400px;
+    
+}
+    
+.url-Enter-Div-Pdf{
+    text-align: center;
+    
+}
+    
+/* PDF END*/
+
+/* FOX START*/
+#programHover:hover{
+    opacity: 50%;
+}
+
+
+/* FOX END*/
 
 

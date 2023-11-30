@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unsafe browser</title>
+    <link rel="stylesheet" type="text/css" href="Css.css" />
+    
+</head>
+
+  
+
+<body style="
+background-color: rgb(0, 13, 65);">
+    
+  <div id="body-Div-flame-Fox1" style="
+    background-color: gray;
+    ">
+
+    <!-- FOX BACKGROUND DIV -->
+    <div style="
+    border-color: black;
+    border-style: solid;
+    border-width: 0.1cm;
+    left: 0; right: 0;
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    background-color: rgb(67, 67, 67);
+    margin: auto;
+    ">
+    
+    <!-- SEARCH URL DIV -->
+    <div class="url-Enter-Div-Silk" style="
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;">
+      
+      <input type="button" value="Enter" id="enter-Btn-Silk">
+      <input type="text" value="flamefox.org" id="url-Bar-Silk">
+    </div>
+
+    <!-- PROGRAMS RUNNING PULS -->
+    <div id="programs-Running-Fox">
+
+    </div>
+
+    <!-- FOX LOGO -->
+    <img src="Images/flame-Fox-Logo.jpg" alt="flamefoxLogo" style="
+    width: 100px;
+    border-radius: 50%;
+    margin: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    box-shadow: 12px 0 15px -4px rgba(255, 132, 71, 0.8), -12px 0 8px -4px rgba(255, 132, 71, 0.8);
+    ">
+   
+    <!-- PROGRAMS DIV -->
+    
+    <div style="
+      width: 100%;
+      height: 62px;
+      background-color: rgb(90, 90, 90);
+      text-align: center;
+      position: absolute;
+      bottom: 0px;
+      box-shadow: 0px -10px 8px -4px rgba(255, 132, 71, 0.8);
+
+      ">
+
+      <img id="programHover" title="tor.program" onclick="TorClick()" src="Images/tor-browser-icon.png" alt="torBrowser" style="
+      width: 60px;
+      ">
+
+  
+    </div>
+  
+  </div>
+
+  <script>
+    
+    var torClicked = false;
+
+    var enterBtnSilk = document.getElementById("enter-Btn-Silk");
+    var urlBarSilk = document.getElementById("url-Bar-Silk");
+    
+    var programsRunningFox = document.getElementById("programs-Running-Fox");
+
+    function urlSearchSilk(){
+      if(urlBarSilk.value == "https://voidcrypt.org"){
+        window.location.href = "index.html";
+
+      }else if(urlBarSilk.value == "voidcrypt.org"){
+        window.location.href = "index.html";
+
+      }else if(urlBarSilk.value == "https://flamefox.org"){
+        alert("You are already here...");
+
+      }else if(urlBarSilk.value == "flamefox.org"){
+        alert("You are already here...");
+
+      }else if(urlBarSilk.value == "voidcrypt.org/about"){
+        window.location.href = "About.html";
+
+      }else if(urlBarSilk.value == "voidcrypt.org/decryption"){
+        window.location.href = "Decryption.html";
+
+      }else if(urlBarSilk.value == "leaksfinder.onion" && torClicked == true){
+        window.location.href = "pdf.html";
+
+      }else if(urlBarSilk.value == "silk-road.onion" && torClicked == true){
+        window.location.href = "Silk-Road-onion.html";
+
+      }else if(urlBarSilk.value == "voidcrypt.org/news"){
+        window.location.href = "News.html";
+
+      }else{
+        alert(`Url dont support or could not find "${urlBarSilk.value}", if you typed https:// before, try without`);
+      }
+      
+    }
+    
+    function TorClick(){
+      if(torClicked == false){
+        torClicked = true;
+        torRunning(); 
+      }else{
+        alert("tor already running");
+      }
+    }
+
+    function torRunning(){
+      if(torClicked == true){
+        programsRunningFox.innerHTML += `
+        <p>-</p>
+        <p>Starting tor.program</p>
+        `;
+
+        setTimeout(function(torStarting){
+          programsRunningFox.innerHTML += `
+          <p>.....</p>
+          `;
+          
+        }, 2000);
+
+        setTimeout(function(torStarting1){
+          programsRunningFox.innerHTML += `
+          <h5 id="pulsate-Text">TOR-IS-RUNNING()</h5>
+          
+          `;
+          
+        }, 3200);
+
+
+
+      }
+    }
+
+
+    enterBtnSilk.addEventListener('click',() => {    
+    urlSearchSilk();
+    
+    });
+
+    
+
+
+    
+
+  </script>
+
+  
+    
+
+</body>
+</html>

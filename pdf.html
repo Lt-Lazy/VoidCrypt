@@ -10,29 +10,40 @@
 
     <body id="body-Leaks">
         <div id="body-Div"> 
-            <div>
+            <div id="pdf-body-Div-In">
 
                 <input onclick="exitBrowser()" type="button" value="X" name="exit" id="exit">
 
                 <div class="url-Enter-Div-Pdf">
+
                     <input type="button" value="Enter" id="enter-Btn-Pdf">
                     <input type="text" value="leaksfinder.onion" id="url-Bar-Pdf">
+                    
+                    <br>
+
+                    <input type="button" value="confidential" onclick="confidentialBtn()">
+                    <input type="button" value="Entities" onclick="entitiesBtn()">
+                
                 </div>
 
-
+                
                 <div id="pdf-List" style="padding: 3%;">
-                    <button title="Pentagon.pdf" onclick=""><img id="pdf-Icon" src="Images/pdf-icon.png" alt=""></button>
-                    <button title="Amazonas.pdf" onclick=""><img id="pdf-Icon" src="Images/pdf-icon.png" alt=""></button>
-                    <button title="entity-3.pdf" onclick="entity3Click()"><img id="pdf-Icon" src="Images/pdf-icon.png" alt=""></button>
-                    <button title="Mars-1994.pdf" onclick=""><img id="pdf-Icon" src="Images/pdf-icon.png" alt=""></button>
-                    <button title="Ukraine.pdf" onclick="ukraineClick()"><img id="pdf-Icon" src="Images/pdf-icon.png" alt=""></button>
+                    
 
-                    <button title="Black-Rock.pdf" onclick=""><img id="pdf-Icon" src="Images/pdf-icon.png" alt=""></button>
-                    <button title="8djS73Sj38.pdf" onclick=""><img id="pdf-Icon" src="Images/pdf-icon.png" alt=""></button>
+
                 </div>
-
+                
+                
+                
                 <div id="pdf-Body">
 
+                    <button style="text-align: right;" onclick="xpdf()">X</button>
+
+                    
+                            
+                            
+
+                    </div>
             
                     
                 </div>
@@ -40,6 +51,7 @@
                 <script>
 
                     var outputPdf = document.getElementById("pdf-Body");
+                    var outputPdfIn = document.getElementById("pdf-List");
 
                     var enterBtnPdf = document.getElementById("enter-Btn-Pdf");
                     var urlBarPdf = document.getElementById("url-Bar-Pdf");
@@ -169,6 +181,10 @@
                                 Because this one was found on the phone<br>
                                 of a security guard that passed away <br>
                                 the photo's date is the date he died. <br>
+                                
+                                <h4 style="text-align: left;">Leak</h4> <br>
+                                - Backrooms-fandom-wiki
+
 
                                 </div>
                             </p>
@@ -183,6 +199,61 @@
 
                     }
 
+                    function entity18Click(){
+                        outputPdf.innerHTML = `
+                        
+                        <button style="text-align: right;" onclick="xpdf()">X</button>
+
+                        <h1 id="confidential">confidential</h1>
+                        
+                        <h1 style="text-align: right;">ENTITY #18: "The beast of lvl 5"</h1>
+                            <p>
+                            
+                                <h4 style="text-align: left;"> Information</h4>
+                                Entity 18, also alluded to as "The Beast of Level 5", takes the appearance of 6-foot-tall blue octopus dressed within a suit, while also having blue-violet intimidating eyes and a scaly torso.
+                                As the name suggests, The Beast of Level 5 is an entity that is solely exclusive towards Level 5.
+                                The Beast has the ability to camouflage within certain objects, with the exception of slightly exposing its face.
+                                Additionally, The Beast can camouflage objects, making several traps placed by The Beast go unnoticed by wanderers.
+                                
+                                <h4 style="text-align: left;"> Behaviors</h4>
+                                The Beast is always aware of the conditions and location of its victims when they are present within Level 5.
+                                However, The Beast will not immediately attack, rather instead, toy with its prey by making them lose sleep, causing them to go on the brink of insanity.
+                                Once this has been accomplished, The Beast will materialize in front of its target, and give them the opportunity to obtain endless resources, extraordinary power, and paradise, all in the favour of working for him.
+                                Whatever you do, do not accept his offer.
+                                Those who do will find themselves being devoured by The Beast, and soon enough, wake up in Level 666. However, if you deny his offer, run as fast as possible, until you have entered a new level; The Beast does not have his godlike powers on other levels.
+
+                                <h4 style="text-align: left;">Refrences</h4>
+                            
+                                
+
+                                <img id="pdf-Image" src="Images/Entity-18.png" alt="entity-3-img">
+                                <div>
+                                
+                                The first reports of The Beast dates back in 2008. <br>
+                                By an M.E.G operator<br>
+                                that disconnected form the radio<br>
+                                short after explaining the sight of<br>
+                                entity #18<br>
+                                There is also reported similar <br>
+                                instances of same sigthings <br>
+                                300 years back, but this is <br>
+                                questionable. <br>
+
+                                <h4 style="text-align: left;">Leak</h4> <br>
+                                - Backrooms-fandom-wiki
+
+                                </div>
+                            </p>
+                        
+                        
+                        
+                        
+                        `;
+                        document.getElementById("pdf-Body").style.opacity = "100%";
+                        document.getElementById("pdf-List").style.opacity= "0%";
+
+                    }
+
                     function xpdf() {
                         outputPdf.innerHTML = ``;
                         document.getElementById("pdf-Body").style.opacity = "0%";
@@ -190,8 +261,55 @@
 
                     }
 
+                    function enterBtnPdf(){
+                        outputPdf.innerHTML = `
+                        
+                        
+
+                        `;
+                    }
+
+                    function confidentialBtn(){
+                        outputPdfIn.innerHTML = `
+                        
+                        <button title="Pentagon.pdf" onclick=""><img id="pdf-Icon" src="Images/pdf-icon.png" alt=""></button>
+                        <button title="Amazonas.pdf" onclick=""><img id="pdf-Icon" src="Images/pdf-icon.png" alt=""></button>
+                        <button title="Mars-1994.pdf" onclick=""><img id="pdf-Icon" src="Images/pdf-icon.png" alt=""></button>
+                        <button title="Ukraine.pdf" onclick="ukraineClick()"><img id="pdf-Icon" src="Images/pdf-icon.png" alt=""></button>
+                        <button title="Black-Rock.pdf" onclick=""><img id="pdf-Icon" src="Images/pdf-icon.png" alt=""></button>
+                        <button title="8djS73Sj38.pdf" onclick=""><img id="pdf-Icon" src="Images/pdf-icon.png" alt=""></button>
+
+                        <br>
+                        <br>
+                        <input onclick="homePdf()" type="button" value="Back" name="home" id="home">
+                        
+                        `;
+                    }
+
+                    function entitiesBtn(){
+                        outputPdfIn.innerHTML = `
+                        
+                        <button title="entity-18.pdf" onclick="entity18Click()"><img id="pdf-Icon" src="Images/pdf-icon.png" alt=""></button>
+                        <button title="entity-3.pdf" onclick="entity3Click()"><img id="pdf-Icon" src="Images/pdf-icon.png" alt=""></button>
+                        
+                        <br>
+                        <br>
+                        <input onclick="homePdf()" type="button" value="Back" name="home" id="home">
+
+                        `;
+                    }
+
+                    function homePdf(){
+                        outputPdfIn.innerHTML = `
+                        
+                        
+                        
+                        `;
+                    }
+
+
                     function exitBrowser(){
-                        window.location.href = "index.html";
+                        window.location.href = "desktop.html";
                     }
 
                     enterBtnPdf.addEventListener('click',() => {    
@@ -204,7 +322,7 @@
 
 
             </div>
-        </body>
+        </div>
     </body>  
 
 </html>

@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="Css.css" />
+
+    <title>Document</title>
+</head>
+<body 
+    style="background-color: rgb(0, 0, 0);
+    
+    ">
+
+
+    <!-- BACKGROUND -->
+    <div id="out-Put-Desktop" style="
+        background-color: rgb(0, 0, 0);
+        border-style: solid;
+        border-color: gray;
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        background-image: url(Images/FieldBackroundHint.jpg);
+        background-size: cover;
+       
+        ">
+        
+        <div id="out-Put-Menu">
+            
+            
+    
+        </div>
+            
+        
+          
+
+        <div style="
+            background-color: rgb(69, 69, 69);
+            border-style: solid;
+            border-width: 2px;
+            ">
+            
+            
+            <!-- TOOLBAR MENU -->
+            <button id="programHover" id="Menu-Btn-Void" title="Menu" onclick="clickMenu()"><img id="Menu" src="Images/VoidCryptLogo.jpg" alt="" style="
+            width: 0.5cm;
+            border-radius:20%;
+            background-color: blue;
+            
+            "></button>
+
+            <!-- TOOLBAR TERMINAL-->
+            <button id="programHover" title="Terminal" onclick="openTerminal()"><img id="Terminal" src="Images/terminal-icon-trans.png" alt="" style="
+            width: 0.6cm;
+            border-radius:20%;
+            
+            "></button>
+
+            <!-- TOOLBAR INTERNET-->
+            <button id="programHover" title="Internet" onclick="internetSettings()"><img id="Internet" src="Images/Internet-icon.png" alt="" style="
+                width: 0.5cm;
+                border-radius:20%;
+                
+                
+            "></button>
+            
+
+        </div>
+
+
+        <!-- FOLDER1 -->
+        <img id="programHover" onclick="openDocuments()" src="Images/VoidFolderIcon.jpg" title="Documents" alt="" style="
+            width: 1.5cm;
+            border-radius: 40%;
+            padding: 2%;"
+            
+        >
+
+        <!-- EMAIL -->
+        <img id="programHover" onclick="openMail()" src="Images/email-icon-trans.png" title="Mail" alt="" style="
+            width: 1.5cm;
+            border-radius: 50%;
+            padding: 2%;"
+        >
+        
+        <!-- LEADERBOARD -->
+        <img id="programHover" onclick="openLeaderboard()" src="Images/Anonymous-Hacker.png" title="leaderboard" alt="" style="
+            width: 1.5cm;
+            border-radius: 50%;
+            padding: 2%;"
+        >
+
+        <br>
+
+        <!-- FOLDER2 -->
+        <img id="programHover" onclick="openWebFolder()" src="Images/VoidFolderIcon.jpg" title="web" alt="" style="
+            width: 1.5cm;
+            border-radius: 40%;
+            padding: 2%;"
+        >
+
+        <br>
+
+        <!-- FLAMEFOX -->
+        <img id="programHover" onclick="openFlameFox()" src="Images/flame-Fox-Logo.jpg" title="web" alt="" style="
+            width: 1.5cm;
+            border-radius: 50%;
+            padding: 2%;"
+        >
+
+        
+
+        
+        
+        <div id="output-Div-Home-Window">
+            
+
+        </div>
+            
+            
+
+        
+        
+
+    </div>
+
+
+</body>
+
+<script>
+
+    var outPutDesktop = document.getElementById("out-Put-Desktop");
+    var outputDivHomeWindow = document.getElementById("output-Div-Home-Window");
+    var menuBtnVoid = document.getElementById("menu-Btn-Void");
+
+    var enterBtnDesktopTerminal = document.getElementById("enter-Btn-Desktop-Terminal");
+
+    var outPutMenu = document.getElementById("out-Put-Menu");
+
+    var internetTurnOn = false;
+    var internet = false;
+
+    function openWebFolder(){
+        outputDivHomeWindow.innerHTML += `
+        
+        <div style="
+            border-color: black;
+            border-style: solid;
+            border-width: 0.1cm;
+            left: 0; right: 0;
+            width: 350px;
+            height: 250px;
+            position: absolute;
+            background-color: rgb(67, 67, 67);
+            margin: auto;">
+            
+            <div style="
+            background-color: black;">
+
+                <input onclick="closeWindow()" type="button" value="X" name="" id="">
+            
+            </div>
+            
+            <img onclick="fileNotPermission()" src="Images/text-file-icon.png" title="websites.txt" alt="" style="
+            width: 1.5cm;
+            border-radius: 40%;
+            padding: 2%;">
+        
+        `;
+    }
+
+    function openDocuments(){
+        outputDivHomeWindow.innerHTML += `
+        <div style="
+            border-color: black;
+            border-style: solid;
+            border-width: 0.1cm;
+            left: 0; right: 0;
+            width: 350px;
+            height: 250px;
+            position: absolute;
+            background-color: rgb(67, 67, 67);
+            margin: auto;">
+            
+            <div style="
+            background-color: black;">
+
+                <input onclick="closeWindow()" type="button" value="X" name="" id="">
+            
+            </div>
+            
+            <img id="programHover" onclick="cantStartProgramTor()" src="Images/tor-browser-icon.png" title="tor.program" alt="tor" style="
+            width: 1.5cm;
+            border-radius: 40%;
+            padding: 2%;">
+
+            <img id="programHover" onclick="cantStartProgramNmap()" src="Images/text-file-icon.png" title="nmap.program" alt="nmap" style="
+            width: 1.5cm;
+            border-radius: 40%;
+            padding: 2%;">
+
+            <img id="programHover" onclick="openFolderRandome()" src="Images/VoidFolderIcon.jpg" title="randome" alt="" style="
+            width: 1.5cm;
+            border-radius: 40%;
+            padding: 2%;"
+            >
+
+        </div>
+        
+        `;
+
+    }
+
+    function openLeaderboard(){
+        outPutMenu.innerHTML += `
+        
+        <div style="
+            border-color: black;
+            border-style: solid;
+            border-width: 0.1cm;
+            left: 0; right: 0;
+            width: 350px;
+            height: 350px;
+            position: absolute;
+            background-color: rgb(67, 67, 67);
+            background-image: url(Images/GreenNumberGif.gif);
+            margin: auto;
+            
+            background-size: cover;
+            ">
+            
+                <div style="
+                background-color: rgb(198, 173, 34);">
+
+                    <input onclick="closeMenu()" type="button" value="X" name="" id="">
+                
+                </div>
+                <h3 style="background-color: rgb(198, 173, 34); text-align: center;"> <img src="Images/Icon_White_hacker.png" style="width: 25px;" alt="">BETA Leaderboard <img src="Images/Icon_White_hacker.png" style="width: 25px;"><br></h3> 
+                
+                <h5 style="text-align: center; background-color: rgb(198, 173, 34);">
+
+                    First 10 to complete <br>
+                    POSITON/NAME/RANK/DDMMYY <br>
+
+                </h5>
+
+                <h5 style="background-color: rgb(198, 173, 34); display: table; text-align: center;">
+                    1./Lazy/GM/130224 <br>
+                    2./ <br>
+                    3./ <br>
+                    4./ <br>
+                    5./ <br>
+                    6./ <br>
+                    7./ <br>
+                    8./ <br>
+                    9./ <br>
+                    10./ <br>
+                </h5>
+                
+            </div>
+        
+        
+        `;
+
+    }
+
+    function openFolderRandome(){
+        outputDivHomeWindow.innerHTML += `
+        <div style="
+            border-color: black;
+            border-style: solid;
+            border-width: 0.1cm;
+            left: 0; right: 0;
+            width: 350px;
+            height: 250px;
+            position: absolute;
+            background-color: rgb(67, 67, 67);
+            margin: auto;">
+            
+            <div style="
+            background-color: black;">
+
+                <input onclick="closeWindow()" type="button" value="X" name="" id="">
+            
+            </div>
+            
+            <img id="programHover" onclick="openInformationTXT()" src="Images/text-file-icon.png" title="information" alt="nmap" style="
+            width: 1.5cm;
+            border-radius: 40%;
+            padding: 2%;">
+
+            <img id="programHover" onclick="openLoveLetterTXT()" src="Images/LoveLetterIcon.png" title="nuniz.exe" alt="nmap" style="
+            width: 1.5cm;
+            border-radius: 40%;
+            padding: 2%;">
+        
+            
+
+        </div>
+        
+        `;
+    }
+
+    function openInformationTXT(){
+        outputDivHomeWindow.innerHTML += `
+        
+        <div style="
+            border-color: black;
+            border-style: solid;
+            border-width: 0.1cm;
+            left: 0; right: 0; top: 10%;
+            width: 300px;
+            height: 450px;
+            position: absolute;
+            background-color: rgb(67, 67, 67);
+            margin: auto;">
+            
+            <div style="
+            background-color: black;">
+
+                <input onclick="closeWindow()" type="button" value="X" name="" id="">
+            
+            </div>
+
+            <h1>Information</h1>
+            <p>This is a project developed by some cybersecurity students.</p>
+            <p>Mainly for people that are curious and like to solve riddles and tasks.</p>
+            <p>Your first task is to find the decryption and about page. Or check the mail</p>
+            <p>Discord: https://discord.gg/9scMUYCju6</p>
+        </div>
+
+        `;
+    }
+
+    function openFlameFox(){
+        if(internet == true){
+            window.location.href = "flame-Fox.html";
+        }else{
+            alert("You are not connected to internet :(");
+        }
+        
+    }
+
+    function openMail(){
+        outputDivHomeWindow.innerHTML = `
+        
+        <div style="
+                border-color: rgb(0, 0, 0);
+                border-style: solid;
+                border-width: 0.1cm;
+                left: 1; right: 0; top: 10%;
+                width: 300px;
+                height: 450px;
+                position: absolute;
+                background-color: rgb(197, 197, 197);
+                margin: auto;">
+                
+                <div style="
+                background-color: rgb(0, 115, 255);
+                border-style: solid;
+                ">
+                    
+                    <input onclick="closeWindow()" type="button" value="X" name="" id="">
+                    <h3 style="text-align: center;">Mail</h3>
+                </div>
+                
+                <div style="
+                background-color: rgb(0, 115, 255); 
+                border-style: solid;
+                
+                ">
+                <p>From: VoidCrypt Team</p>
+                <input type="button" value="Open" onclick="openMailVoid()">
+                    
+                </div>
+
+                <div style="
+                background-color: rgb(0, 115, 255); 
+                border-style: solid;
+                
+                ">
+                <p>From: Alice</p>
+                <input type="button" value="Open" onclick="openMailAlice()">
+                    
+                </div>
+
+                <div style="
+                background-color: rgb(0, 115, 255); 
+                border-style: solid;
+                
+                ">
+                <p>From: BigSale!</p>
+                <input type="button" value="Open" onclick="openMailVirus()">
+                    
+                </div>
+
+                
+            </div>
+        
+        
+        `;
+
+    }
+
+    function openMailVoid(){
+        outputDivHomeWindow.innerHTML = `
+            <div style="
+                border-color: rgb(0, 0, 0);
+                border-style: solid;
+                border-width: 0.1cm;
+                left: 1; right: 0; top: 10%;
+                width: 300px;
+                height: 450px;
+                position: absolute;
+                background-color: rgb(197, 197, 197);
+                margin: auto;">
+                
+                <div style="
+                background-color: rgb(0, 115, 255);
+                border-style: solid;
+                ">
+                    
+                    <input onclick="closeMail()" type="button" value="X" name="" id="">
+                    <h4>From: noreply@voidcrypt.com</h4>
+                    <h4>To: voidcrypt@hotmail.com</h4>
+                    <p>Subject: Welcome!</p>
+
+                </div>
+                
+                <p>Hey!</p>
+                <p>
+                    This mailbox is used to read emails that the user receive! <br>
+                    Which can be informational mails, missions or random stuff from any email address. <br>
+                    Make sure to be updated :)
+                    <br>
+                    <br>
+                    Best regards <br>
+                    The Voidcrypt Team <br>
+                    <img src="Images/VoidCryptLogo.jpg" alt="voidcrypt-Logo" 
+                    style="border-radius: 50%;
+                    width: 30px;
+                    ">
+
+                </p>
+                
+                
+            </div>
+        
+        `;
+    
+    }
+
+    function openMailAlice(){
+        outputDivHomeWindow.innerHTML = `
+
+        <div style="
+            border-color: rgb(0, 0, 0);
+            border-style: solid;
+            border-width: 0.1cm;
+            left: 1; right: 0; top: 10%;
+            width: 300px;
+            height: 450px;
+            position: absolute;
+            background-color: rgb(197, 197, 197);
+            margin: auto;">
+            
+            <div style="
+            background-color: rgb(0, 115, 255);
+            border-style: solid;
+            ">
+                
+                <input onclick="closeMail()" type="button" value="X" name="" id="">
+                <h4>From: iamalice@gmail.com</h4>
+                <h4>To: voidcrypt@hotmail.com</h4>
+                <p>Subject: Mission board</p>
+
+            </div>
+            
+            <p>Hey!</p>
+            <p>
+                I have some missions that are open for anyone to complete. <br>
+                And the reward, in your case, will be administrated and handed to you by the Voidcrypt Team, after completion. <br>
+                check out the attachment: <br>
+                
+
+                <br>
+                
+                Best regards <br>
+                Alice <br>
+                
+                <input onclick="viewAttachmentAlice()" type="button" value="attachment" id="">
+
+            </p>
+                
+                
+        </div>
+        `;
+    }
+
+    function openMailVirus(){
+        outputDivHomeWindow.innerHTML = `
+        <div style="
+            border-color: rgb(0, 0, 0);
+            border-style: solid;
+            border-width: 0.1cm;
+            left: 1; right: 0; top: 10%;
+            width: 300px;
+            height: 450px;
+            position: absolute;
+            background-color: rgb(197, 197, 197);
+            margin: auto;">
+            
+            <div style="
+            background-color: rgb(0, 115, 255);
+            border-style: solid;
+            ">
+                
+                <input onclick="closeMail()" type="button" value="X" name="" id="">
+                <h4>From: CongratzWinner@Sale.com</h4>
+                <h4>To: voidcrypt@hotmail.com</h4>
+                <p>Subject: You Won!</p>
+
+            </div>
+            
+            <p>Hey!</p>
+            <p>
+                1 in a billion and you won! <br>
+                For celebration we sent you the prize right away! <br>
+                Click on the certified link to achive your prize! <br>
+                
+
+                <br>
+                
+                Best regards <br>
+                BigSale <br>
+                
+                <input type="button" value="notvirus" onclick="virus1()">
+
+            </p>
+                
+                
+        </div>
+        
+        
+        
+        `;
+    }
+
+    function viewAttachmentAlice(){
+        outputDivHomeWindow.innerHTML = `
+        
+        <div style="
+                border-color: rgb(0, 0, 0);
+                border-style: solid;
+                border-width: 0.1cm;
+                left: 0; right: 0; top: 10%;
+                width: 500px;
+                height: 350px;
+                position: absolute;
+                background-color: rgb(0, 0, 0);
+                margin: auto;
+                
+                ">
+                
+                <div style="
+                background-color: rgb(0, 0, 0);
+                border-style: solid;
+                ">
+                    
+                    <input onclick="closeMail()" type="button" value="X" name="" id="">
+                    <h3 style="text-align: center; color: white;">Mission board&diams;</h3>
+
+                </div>
+                
+                <img src="Images/world-map-icon-trans.png" alt=""
+                style="width: 500px;
+                ">
+
+                <img onclick="missionRussia()" id="programHover" src="Images/red-location-pin-trans.png" alt="Location" style="
+                width: 25px;
+                left: 300px;                
+                position: absolute;
+                ">
+
+                <img onclick="missionSouthAfrica()" id="programHover" src="Images/red-location-pin-trans.png" alt="Location" style="
+                width: 25px;
+                top: 220px;
+                left: 260px;                
+                position: absolute;
+                ">
+
+                <img onclick="missionUSA()" id="programHover" src="Images/red-location-pin-trans.png" alt="Location" style="
+                width: 25px;
+                top: 120px;
+                left: 110px;                
+                position: absolute;
+                ">
+                
+                
+            </div>
+        
+        `;
+
+    }
+
+    function missionUSA(){
+        outputDivHomeWindow.innerHTML = `
+        
+        <div style="
+            border-color: rgb(0, 0, 0);
+            border-style: solid;
+            border-width: 0.1cm;
+            left: 0; right: 0; top: 10%;
+            width: 500px;
+            height: 450px;
+            position: absolute;
+            background-color: rgb(0, 0, 0);
+            margin: auto;
+            
+            ">
+            
+            <div style="
+            background-color: gray;
+            border-style: solid;
+            border-color: grey;
+            ">
+                
+                <input onclick="closeMail()" type="button" value="X" name="" id="">
+                <img src="Images/female-head-icon-trans.png" alt="" style="
+                position: absolute;
+                width: 100px;
+                top: 10%;
+                left: 0;
+                right: 0;
+                border-style: solid;
+                border-color: white;
+                background-color: green;
+                ">
+
+            </div>
+            
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+
+            <p style="color: white;">
+                <br>
+                This is hunter task 002. <br>
+                <br>
+                The task is to find the username and password to a person named Bob, on silk-road.onion. Bob is a man born in 1973, and intelligence say that he is a fan of arsenal. Forthermore, after getting the hold of his username and password to silk-road.onion, your next mission is to use that to log in to his user on silk-road.onion. If you have gained access to his account you need to make a purchase of any item so we can track the package to his location. And thats the mission. <br>
+                Remember to paste the FLAG[] from the mission, in the terminal. <br>
+                You will need to do an nmap scan to his IP: 198.392.69.420. Log in to his computer where he store his credentials to silk-road.onion, but first figure out the password to his computer with the information we have on him.
+
+            </p>
+            
+            
+        </div>
+        
+        
+        `;
+
+    }
+
+    function missionSouthAfrica(){
+        alert("Mission not out yet!");
+    }
+
+    function missionRussia(){
+        alert("Mission not out yet!");
+
+    }
+
+    function closeMail(){
+        outputDivHomeWindow.innerHTML = `
+        <div style="
+                border-color: rgb(0, 0, 0);
+                border-style: solid;
+                border-width: 0.1cm;
+                left: 1; right: 0; top: 10%;
+                width: 300px;
+                height: 450px;
+                position: absolute;
+                background-color: rgb(197, 197, 197);
+                margin: auto;">
+                
+                <div style="
+                background-color: rgb(0, 115, 255);
+                border-style: solid;
+                ">
+                    
+                    <input onclick="closeWindow()" type="button" value="X" name="" id="">
+                    <h3 style="text-align: center;">Mail</h3>
+                </div>
+                
+                <div style="
+                background-color: rgb(0, 115, 255); 
+                border-style: solid;
+                
+                ">
+                <p>From: VoidCrypt Team</p>
+                <input type="button" value="Open" onclick="openMailVoid()">
+                    
+                </div>
+
+                <div style="
+                background-color: rgb(0, 115, 255); 
+                border-style: solid;
+                
+                ">
+                <p>From: Alice</p>
+                <input type="button" value="Open" onclick="openMailAlice()">
+                    
+                </div>
+
+                <div style="
+                background-color: rgb(0, 115, 255); 
+                border-style: solid;
+                
+                ">
+                <p>From: BigSale!</p>
+                <input type="button" value="Open" onclick="openMailVirus()">
+                    
+                </div>
+                
+            </div>
+        
+        `;
+    }
+
+    function internetSettings(){
+        internetTurnOn = true;
+        internet = true;
+        alert("You are connected to internet for now");
+        outputDivHomeWindow.innerHTML += `
+            <div style="
+                border-color: black;
+                border-style: solid;
+                border-width: 0.1cm;
+                left: 0; right: 0; top: 10%;
+                width: 300px;
+                height: 450px;
+                position: absolute;
+                background-color: rgb(67, 67, 67);
+                margin: auto;">
+                
+                <div style="
+                background-color: black;">
+
+                    <input onclick="closeWindow()" type="button" value="X" name="" id="">
+                
+                </div>
+
+                <h1>Internet connection</h1>
+                <p>You are now connected to the World Wide Web!</p>
+                <p>You can now access the Flamefox browser!</p>
+                <p>Remember that we reset and turn off the internet everytime you exit the browser, for security reasons :) If you dont know what to do in the browser, check the terminal or filesystem.</p>
+        
+            </div>
+            
+        `;
+
+    }
+
+    function clickMenu(){
+        outPutMenu.innerHTML = `
+        <div style="
+            border-color: black;
+            border-style: solid;
+            border-width: 0.1cm;
+            left: 0; right: 1;
+            width: 200px;
+            height: 350px;
+            position: absolute;
+            background-color: rgb(67, 67, 67);
+            margin: auto;">
+            
+            <div style="
+            background-color: rgb(0, 0, 0);">
+
+                <input onclick="closeMenu()" type="button" value="X" name="" id="">
+            
+            </div>
+            <h1>Menu</h1>
+            <p>Nothing to see here</p>
+
+            <img id="programHover" src="Images/red-power-button-icon.png" onclick="powerOff()" alt="powerOff" style="
+            width: 20px;
+            position: absolute;
+            top: 94%;
+            left: 90%;
+            ">            
+
+        </div>
+        
+        `;
+    }
+
+    function virus1(){
+        
+        outPutDesktop.innerHTML = `
+            <h1>
+                YOU HAVE BEEN HACKED!! <br>
+            
+                RELOAD THE BROWSER NOW!
+            </h1>
+        
+        
+        `;
+        setTimeout(function(virus1Clicked){
+            outPutDesktop.innerHTML += `
+            <img src="Images/virusDetectedWindows.gif" alt="">
+            `;
+        }, 1500);
+        
+        setTimeout(function(virus1Clicked){
+            outPutDesktop.innerHTML += `
+            <img style="top: 20%; left: 50%; position: absolute;" src="Images/virusDetectedWindows2.gif" alt="">
+
+            `;
+        }, 3000);
+
+        setTimeout(function(virus1Clicked){
+
+            outPutDesktop.style.backgroundImage = "url(Images/crashGif.gif)";
+            
+        }, 4000);
+
+        setTimeout(function(virus1Clicked){
+
+            outPutDesktop.style.backgroundImage = "url(Images/BlackIMG.png)";
+
+        }, 5200);   
+
+        setTimeout(function(virus1Clicked){
+            outPutDesktop.innerHTML = ``;
+        
+        }, 6000); 
+
+        setTimeout(function(virus1Clicked){
+            outPutDesktop.innerHTML = `
+            <h1 id="text">Give us a second while the voidcrypt team boots up the system safely
+
+            `;
+        
+        }, 7000); 
+
+        setTimeout(function(virus1Clicked){
+            outPutDesktop.innerHTML += `
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
+                
+            `;
+        
+        }, 10000);
+
+        setTimeout(function(virus1Clicked){
+            outPutDesktop.innerHTML += `
+            <h5 class="html-Code-Home-White">run ClearUserVoid.exe</h5>
+                
+            `;
+        
+        }, 13000);
+
+        setTimeout(function(virus1Clicked){
+            outPutDesktop.innerHTML += `
+            <h5 class="html-Code-Home-White">Loading...</h5>
+                
+            `;
+
+        }, 15000);
+
+        setTimeout(function(virus1Clicked){
+            outPutDesktop.innerHTML += `
+            <h5 class="html-Code-Home-White">COMPLETE</h5>
+                
+            `;
+        
+        }, 17000);
+
+        setTimeout(function(virus1Clicked){
+            outPutDesktop.innerHTML += `
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
+                
+            `;
+        
+        }, 18500);
+
+        setTimeout(function(virus1Clicked){
+            outPutDesktop.innerHTML += `
+            <h5 class="html-Code-Home-White">run reboot.exe</h5>
+                
+            `;
+        
+        }, 20000);
+
+        setTimeout(function(virus1Clicked){
+            outPutDesktop.innerHTML += `
+            <h5 class="html-Code-Home-White">Loading...</h5>
+                
+            `;
+
+        }, 21000);
+
+        setTimeout(function(virus1Clicked){
+            outPutDesktop.innerHTML = `
+            <img src="Images/loadingGifGreen.gif" alt="Loading" style="
+                
+                position:absolute;
+                top:0;
+                left:0;
+                right:0;
+                bottom:0;
+                margin:auto;
+                
+            ">    
+            `;
+
+        }, 23000);
+
+        setTimeout(function(virus1Clicked){
+            window.location.href = "desktop.html";
+
+        }, 24000);
+
+    }
+
+    
+
+    function openLoveLetterTXT(){
+        alert("this is for NUNIZ! you can't START this .EXE here");
+    }
+
+    function closeMenu(){
+        outPutMenu.innerHTML = ``;
+    }
+
+    function closeWindow(){
+        outputDivHomeWindow.innerHTML = ``;
+    }
+
+    function openTerminal(){
+        window.location.href = "Terminal.html";
+    }
+    
+    function fileNotPermission(){
+        alert("You dont have permission");
+    }
+
+    function cantStartProgramTor(){
+        alert("This is an extension to flamefox");
+    }
+
+    function cantStartProgramNmap(){
+        alert("This is a terminal program");
+    }
+
+    function powerOff(){
+        window.location.href = "index.html";
+
+    }
+
+
+</script>
+
+</html>

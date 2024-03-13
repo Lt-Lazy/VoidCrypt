@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuniz</title>
+</head>
+<body style="background-color: rgb(255, 255, 255);">
+
+    <!-- Burgunder bakgrunn div -->
+    
+    <div id="nunizBakgrunnChange" style="
+        border-color: black;
+        border-style: solid;
+        border-width: 0.1cm;
+        left: 0; right: 0;
+        width: 90%;
+        height: 96%;
+        position: absolute;
+        background-color: rgb(128, 0, 32);
+        margin: auto;
+        ">
+
+        <div id="outPutDivNuniz" style="
+            text-align: center;
+            
+            
+            ">
+
+            <input onclick="openValDikt24()" type="button" name="" value="&hearts;Valentine2024&hearts;" id="startMenu" style="
+            text-align: center;
+        
+            ">
+
+            <input onclick="openDikt1()" type="button" name="" value="&hearts;Dikt1&hearts;" id="startMenu" style="
+            text-align: center;
+
+            ">
+
+
+            <br>
+            
+            <div>
+                
+                <h1>Nuniz Archive</h1>
+                
+                
+                
+                <img src="Images/cuteCandy1.png" alt="candy" style="
+                margin-left: auto;
+                margin-right: auto;
+                width: 10%;
+                padding: 1%;
+                ">
+
+                <img src="Images/cuteCandy2.png" alt="candy" style="
+                margin-left: auto;
+                margin-right: auto;
+                width: 10%;
+                padding: 2%;
+                ">
+
+                <img src="Images/cuteCandy3.png" alt="candy" style="
+                margin-left: auto;
+                margin-right: auto;
+                width: 10%;
+                padding: 1%;
+                ">
+
+                <br>
+                
+                <img src="Images/cuteDragon.png" alt="candy" style="
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 30%;
+                padding: 1%;
+                ">
+
+                <img src="Images/waterfallGif.gif" alt="" style="
+                
+                position: absolute;
+                left: 0;
+                bottom: 0;
+
+                ">
+
+                <img src="Images/waterfallGif.gif" alt="" style="
+                                
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                margin-top: auto;
+
+                ">
+                
+
+            </div>
+            
+
+        
+
+
+
+        </div>
+        
+        <script>
+            
+            var outPutDiv = document.getElementById("outPutDivNuniz");
+
+
+            function openValDikt24(){
+                outPutDiv.innerHTML = `
+                <h3>Hvor rart det er å drømme om deg mens jeg er våken som en fugl.</h3>
+                <h3>Uten deg for å lede meg, føler jeg at jeg løper i sirkler i skjul.</h3>
+                <h3>Mine tanker om deg er følelsen av å være hjemme.</h3>
+                <h3>Når hodet mitt vandrer, finner jeg alltid veien tilbake til deg, fordi jeg aldri vil glemme.</h3>
+                <h3>Jeg hadde holdt et stearinlys for deg, uansett om den til slutt ville brenne hendene av meg.</h3>
+                <h3>Selv etter det, ville jeg holdt fast i blinde, fordi jeg ikke ville sluppet tak.</h3>
+                <h3>For å ende dette diktet's sak.</h3>
+                <h3>Å savne deg kommer i bølger.</h3>
+                <h3>Og i dag så drukner jeg som følger.</h3>
+                
+                <input onclick="nextValDikt24()" type="button" name="" value="&hearts;Neste&hearts;" id="startMenu" style="
+                text-align: center;
+                
+                ">
+
+                `;
+            }
+
+            function nextValDikt24(){
+                outPutDiv.innerHTML = `
+                <h2>Alt i alt, mellom jord og himmel.</h2>
+                <h2>Jeg har ventet på dette så lenge at det gjør meg svimmel.</h2>
+                <h2>Siden du er så vakker og fin.</h2>
+                
+                <input onclick="next2ValDikt24()" type="button" name="" value="&hearts;Neste&hearts;" id="startMenu" style="
+                text-align: center;
+            
+                ">
+                
+                
+                `;
+            }
+
+            function next2ValDikt24(){
+                outPutDiv.innerHTML = `
+                <h2>Alt i alt, mellom jord og himmel.</h2>
+                <h2>Jeg har ventet på dette så lenge at det gjør meg svimmel.</h2>
+                <h2>Siden du er så vakker og fin.</h2>
+
+                <h1 style="color: white;">Isabella...</h1>
+                <h1 style="color: white;">Vil du være min valentin?</h1>
+                
+                <input onclick="svarJa()" type="button" name="" value="&hearts;Ja&hearts;" id="startMenu" style="
+                text-align: center;
+            
+                ">
+                <input onclick="svarNei()" type="button" name="" value="Nei" id="startMenu" style="
+                text-align: center;
+            
+                ">
+
+
+                `;
+            }
+
+            function svarJa(){
+                outPutDiv.innerHTML = `
+                <img src="Images/happy-cat-happy-happy-cat.gif" alt="">
+
+                <h1>&hearts;HAPPI&hearts;</h1>
+                <h3>Nå kan du gå å ringe meg, jeg vil også vite svaret ditt!!!</h3>
+                <br>
+                <h3>Eller så kan du gå tilbake til ja/nei valget, eller home.</h3>
+                
+                <input onclick="svarTilbake()" type="button" name="" value="Tilbake" id="startMenu" style="
+                text-align: center;
+            
+                ">
+
+                <input onclick="svarHome()" type="button" name="" value="Home" id="startMenu" style="
+                text-align: center;
+
+                ">
+                
+                `;
+
+            }
+
+            function svarNei(color){
+                outPutDiv.innerHTML = `
+                <br>
+                <img src="Images/grumpy-cat-cat-meme.gif" alt="" style="
+                border: 10px solid transparent;
+                padding: 1px;
+                border-image: url(Images/grumpy-cat-cat-meme.gif) 30 round;
+                width: 200px;
+                
+                ">
+
+                <h3>ehh... Vil du prøve igjen kanskje?</h3>
+
+                <input onclick="svarNeiTilbake()" type="button" name="" value="Tilbake!" id="startMenu" style="
+                text-align: center;
+            
+                ">
+
+                
+                `;
+
+
+            }
+
+            function svarNeiTilbake(color){
+                outPutDiv.innerHTML = `
+                <h2>Alt i alt, mellom jord og himmel.</h2>
+                <h2>Jeg har ventet på dette så lenge at det gjør meg svimmel.</h2>
+                <h2>Siden du er så vakker og fin.</h2>
+
+                <h1 style="color: white;">Isabella...</h1>
+                <h1 style="color: white;">Vil du være min valentin?</h1>
+                
+                <input onclick="svarJa()" type="button" name="" value="&hearts;Ja&hearts;" id="startMenu" style="
+                text-align: center;
+            
+                ">
+                <input onclick="svarNei()" type="button" name="" value="Nei" id="startMenu" style="
+                text-align: center;
+            
+                ">
+
+                
+                `;
+
+
+            }
+
+            function svarTilbake(){
+                outPutDiv.innerHTML = `
+                <h2>Alt i alt, mellom jord og himmel.</h2>
+                <h2>Jeg har ventet på dette så lenge at det gjør meg svimmel.</h2>
+                <h2>Siden du er så vakker og fin.</h2>
+
+                <h1 style="color: white;">Isabella...</h1>
+                <h1 style="color: white;">Vil du være min valentin?</h1>
+                
+                <input onclick="svarJa()" type="button" name="" value="&hearts;Ja&hearts;" id="startMenu" style="
+                text-align: center;
+            
+                ">
+                <input onclick="svarNei()" type="button" name="" value="Nei" id="startMenu" style="
+                text-align: center;
+            
+                ">
+                
+                `;
+
+            }
+
+            function openDikt1(){
+                outPutDiv.innerHTML = `
+                
+                <h3>Så spennende å se at du fortsatt besøker.</h3>
+                <h3>Uansett utfordringer så må du vite at jeg alltid forsøker.</h3>
+                <h3>Siden du overtenker, er ikke min stillhet til passe.</h3>
+                <h3>Jeg liker å tenke, men alt i alt så elsker jeg deg enn masse.</h3>
+                <h3>Du får fram noe godt i meg.</h3>
+                <h3>Noen ganger trenger jeg en dytt, så jeg ikke velger en snarvei.</h3>
+                <h3>Personlig pleier jeg ikke å planlegge så mye frem i tid.</h3>
+                <h3>Med unntak av at jeg planlegger å være med deg for alltid.</h3>
+                <h3>Siden dette er et kort dikt.</h3>
+                <h3>Så sier jeg hade bra og jeg ser frem til å se ditt ansikt.</h3>
+                
+                <input onclick="svarHome()" type="button" name="" value="Tilbake" id="startMenu" style="
+                text-align: center;
+            
+                ">
+                
+                `;
+
+            }
+
+            function svarHome(){
+                location.reload();
+                
+                
+
+            }
+
+        </script>
+
+
+
+    </div>
+    
+</body>
+</html>

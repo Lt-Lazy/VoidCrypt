@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="Css.css" />
+
+
+<html>
+
+  <head>
+         
+   <title>Terminal</title>
+            
+  </head>
+
+ 
+  <body style="
+  background-color:rgb(0, 13, 65);">
+    
+    
+    <Div style="
+      background-color: black;
+      border-style: solid;
+      border-color: gray;
+      margin-top: 3cm;
+      margin-left: 2cm;
+      margin-right: 2cm;
+      margin-bottom: 0;
+      ;">
+
+      <input onclick="exitTerminal()" type="button" value="X" name="exit" id="exit">
+
+      <h1>.</h1>
+      <h1>.</h1>
+      <h1>.</h1>
+      
+      
+      
+
+      <!-- easter egg 3 -->
+      <div onclick="alert('Easter egg nr: 3/9')">
+      <img class="inter-Eye" src="Images/eyes-icon-0.png" alt="watching" style="width:42px;height:42px;">
+      </div>
+      <!-- easter egg 3 -->
+      
+      <div id="code-home-container">
+      <h5 id="html-Code-Home">Void@linux-desktop:/index.html: </h5> 
+      </div>
+      
+
+      <div id="output-Div">
+        </h5></h5>
+      </div>
+
+      <div id="output-Div1">
+      </h5></h5>
+      </div>
+      
+      <input id="linux-Input" type="text" placeholder="Terminal">
+      <input id="enter-Btn" type="button" value="Enter">
+      
+      <div id="output-Div1">
+      </h5></h5>
+      </div>
+      
+      
+      <script>
+
+        var bobSshLoginReady = false;
+        var voidLoginTrue = true;
+
+        var sudo = 0;
+        var torBrowser = 0;
+
+        var enterBtnIndex = document.getElementById("enter-Btn-Index");
+        var urlBarIndex = document.getElementById("url-Bar-Index");
+        var outputDiv1 = document.getElementById("output-Div1");
+
+        var enterBtn = document.getElementById("enter-Btn");
+        var userInput = document.getElementById("linux-Input");
+        var outputDiv = document.getElementById("output-Div");
+
+        /*
+        white terminal text:
+        <h5 class="html-Code-Home-White"></h5>
+
+        green terminal text:
+        <h5 id="html-Code-Home"></h5>
+
+        pulsating text:
+        <h5 id="pulsating-Text"></h5>
+
+        */
+        function terminalFunction(){
+          if(userInput.value == "ifconfig"){
+            outputDiv.innerHTML += 
+            `<h5 class="html-Code-Home-White">ifconfig:<br>
+            Link encap:Local Loopback <br> inet addr:132.266.69.157 Mask:256.0.0.0 <br>
+            RX packets: 48 errors:0 dropped:0 overruns:0 frame:0 <br>
+            TX packets: 48 errors:0 dropped:0 overruns:0 frame:0 <br>
+            collisions:0 txqueuelen:0'<br>
+            RX bytes:420 (5.3KiB) TX bytes:420 (5.3 KiB)<br>
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html: </h5>
+            </h5`;
+          }if(userInput.value == "help"){
+            outputDiv.innerHTML +=
+            `<h5 class="html-Code-Home-White">Help:<br>
+              This is void terminal, used on voidcrypt.org <br>
+              to help the user with different tasks. <br>
+              Commands often used are:<br>
+              - help <br>
+              - ifconfig <br>
+              - clear <br>
+              - ls <br>
+              - ls help <br>
+              - cd <br>
+              - sudo <br>
+              - hidden <br>
+              - hidden <br>
+              - hidden <br>
+              ...
+              <h5 id="html-Code-Home">Void@linux-desktop:/index.html: </h5>
+              </h5`
+          }if(userInput.value == "clear"){
+            document. location. reload()
+          }if(userInput.value == "tor.program"){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">tor.program is an web browser that let you access the dark web</h5>
+            <h5 class="html-Code-Home-White">To use tor as browser type "start tor.program"</h5>
+
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html: </h5>
+
+            `;
+          }
+          
+        }
+
+        function nmapCommand(){
+          if(userInput.value == "nmap"){
+            outputDiv.innerHTML += `<h5 class="html-Code-Home-White">nmap format:</h5>
+            <h5 class="html-Code-Home-White">"nmap (ip address)"</h5>
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
+            `; 
+          }if(userInput.value == "nmap 132.266.69.157"){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">nmap starting...</h5>
+            
+            `;
+            
+            setTimeout(function(nmapVoidScan){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">PORT----STATE----SERVICE</h5>
+            <h5 class="html-Code-Home-White">20, filtered, ftp</h5>
+            <h5 class="html-Code-Home-White">21, filtered, smtp</h5>
+            <h5 class="html-Code-Home-White">23, open, ssh</h5>
+            <h5 class="html-Code-Home-White">25, filtered, telnet</h5>
+            <h5 class="html-Code-Home-White">30, filtered, pptp</h5><br>
+            <h5 class="html-Code-Home-White">nmap done: 1 ip address (5 host up) scanned in 5.03 seconds</h5>
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
+            `;
+            }, 5300);
+            
+
+          }if(userInput.value == "nmap 195.256.69.138"){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">nmap starting...</h5>
+            
+            `;
+
+            setTimeout(function(nmapHackScan){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">PORT----STATE----SERVICE</h5>
+            <h5 class="html-Code-Home-White">21, filtered, pptp</h5>
+            <h5 class="html-Code-Home-White">26, filtered, smtp</h5>
+            <h5 class="html-Code-Home-White">34, filtered, ssh</h5>
+            <h5 class="html-Code-Home-White">35, filtered, ftp</h5><br>
+            <h5 class="html-Code-Home-White">nmap done: 1 ip address (4 host up) scanned in 5.03 seconds</h5>
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
+            `;
+            }, 5300);
+
+
+            //NMAP BOB
+
+          }if(userInput.value == "nmap 198.392.69.420"){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">nmap starting...</h5>
+            
+            `;
+
+            setTimeout(function(nmapBobScan){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">PORT----STATE----SERVICE</h5>
+            <h5 class="html-Code-Home-White">35, filtered, ssh</h5><br>
+            <h5 class="html-Code-Home-White">nmap done: 1 ip address (1 host up) scanned in 5.03 seconds</h5>
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
+            `;
+            }, 5300);
+
+
+
+          }if(userInput.value == "ssh bob@198.392.69.420"){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">Connecting to 198.392.69.420...</h5>
+            
+
+            `;
+
+            bobSshLoginReady = true;
+            voidLoginTrue = false;
+
+            setTimeout(function(nmapBobSshScan){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">Connected</h5>
+            <h5 class="html-Code-Home-White">bob@198.392.69.420's password:</h5>
+            
+            
+            `;
+            }, 5300);
+
+          }if(userInput.value == "arsenal1973" && bobSshLoginReady == true){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">365 Login successful</h5>
+            <h5 class="html-Code-Home-White">Remote system type UNIX</h5>
+            <h5 class="html-Code-Home-White">Only supported commands are:</h5>
+            <h5 class="html-Code-Home-White">- ls</h5>
+            <h5 class="html-Code-Home-White">- cd</h5>
+            <h5 class="html-Code-Home-White">- cat</h5>
+            <h5 class="html-Code-Home-White">To exit remote shell type: "exit"</h5>
+            <h5 class="html-Code-Home-White">C:/Users/bob/desktop:</h5>
+
+
+            `;
+
+          }if(userInput.value == "ls" && bobSshLoginReady == true){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">trashcan</h5>
+            <h5 class="html-Code-Home-White">personal</h5>
+            <h5 class="html-Code-Home-White">random</h5>
+            <h5 class="html-Code-Home-White">C:/Users/bob/desktop:</h5>
+            
+            
+            `;
+
+          }if(userInput.value == "cd trashcan" && bobSshLoginReady == true){
+            outputDiv.innerHTML += `
+            
+            <h5 class="html-Code-Home-White">C:/Users/bob/desktop/trashcan:</h5>
+            
+            
+            `;
+
+          }if(userInput.value == "cd personal" && bobSshLoginReady == true){
+            outputDiv.innerHTML += `
+            
+            <h5 class="html-Code-Home-White">password.txt</h5>
+            <h5 class="html-Code-Home-White">loveletter.txt</h5>
+            <h5 class="html-Code-Home-White">C:/Users/bob/desktop/personal:</h5>
+            
+            
+            `;
+
+          }if(userInput.value == "cd random" && bobSshLoginReady == true){
+            outputDiv.innerHTML += `
+            
+            <h5 class="html-Code-Home-White">Tetris.exe</h5>
+            <h5 class="html-Code-Home-White">Mario.exe</h5>
+            <h5 class="html-Code-Home-White">C:/Users/bob/desktop/random:</h5>
+            
+            
+            `;
+
+          }if(userInput.value == "cat password.txt" && bobSshLoginReady == true){
+            outputDiv.innerHTML += `
+            
+            <h5 class="html-Code-Home-White">My safe passord list!</h5>
+            <h5 class="html-Code-Home-White">pc: bob, arsenal1973</h5>
+            <h5 class="html-Code-Home-White">SilikonRoad: bob1973, bobbers</h5>
+            <h5 class="html-Code-Home-White">C:/Users/bob/desktop/random/password:</h5>
+            
+            
+            `;
+
+          }if(userInput.value == "cat loveletter.txt" && bobSshLoginReady == true){
+            outputDiv.innerHTML += `
+            
+            <h5 class="html-Code-Home-White">This is how i show my love to you!</h5>
+            <h5 class="html-Code-Home-White">I love you :)</h5>
+            <h5 class="html-Code-Home-White">- Bob</h5>
+            <h5 class="html-Code-Home-White">C:/Users/bob/desktop/random/loveletter:</h5>
+            
+            
+            `;
+
+          }if(userInput.value == "cd .." && bobSshLoginReady == true){
+            outputDiv.innerHTML += `
+            
+            <h5 class="html-Code-Home-White">C:/Users/bob/desktop/:</h5>
+            
+            
+            `;
+
+          }if(userInput.value == "exit" && bobSshLoginReady == true){
+            document. location. reload();
+
+          }
+
+        }
+        
+        function pingCommand(){
+          if(userInput.value == "ping" && voidLoginTrue == true){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">ping format:</h5><br>
+            <h5 class="html-Code-Home-White">ping (ip address)</h5>
+            <h5 class="html-Code-Home-White">ping (example.org)</h5>
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
+            `;
+          }if(userInput.value == "ping voidcrypt.org"){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">Sending request...</h5>
+            
+            `;
+
+            setTimeout(function(pingScanVoid){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">64 bytes from server -132.266.69.157-voidcrypt.org</h5>
+            `;
+            }, 2000);
+
+            setTimeout(function(pingScanVoid1){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">64 bytes from server -132.266.69.157-voidcrypt.org</h5>
+            `;
+            }, 4000);
+
+            setTimeout(function(pingScanVoid2){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">64 bytes from server -132.266.69.157-voidcrypt.org</h5>
+            `;
+            }, 6000);
+
+            setTimeout(function(pingScanVoid3){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">ping stopped and done: 3 packets recieved, servers up and running</h5>
+            `;
+            }, 8000);
+          
+            setTimeout(function(pingScanVoid4){
+            outputDiv.innerHTML += `
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
+            `;
+            }, 8500);
+          
+          
+          }if(userInput.value == "ping hackme.org"){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">Sending request...</h5>
+            
+            `;
+
+            setTimeout(function(pingScanHack){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">64 bytes from server -195.256.69.138-hackme.org</h5>
+            `;
+            }, 2000);
+
+            setTimeout(function(pingScanHack1){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">64 bytes from server -195.256.69.138-hackme.org</h5>
+            `;
+            }, 4000);
+
+            setTimeout(function(pingScanHack2){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">64 bytes from server -195.256.69.138-hackme.org</h5>
+            `;
+            }, 6000);
+
+            setTimeout(function(pingScanHack3){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">ping stopped and done: 3 packets recieved, servers up and running</h5>
+            `;
+            }, 8000);
+          
+            setTimeout(function(pingScanHack4){
+            outputDiv.innerHTML += `
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
+            `;
+            }, 8500);
+          
+          }if(userInput.value == "ping silk-road.onion"){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">Sending request...</h5>
+            
+            `;
+
+            setTimeout(function(pingScanHack){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">64 bytes from server -154.234.69.173-silk-road.onion</h5>
+            `;
+            }, 2000);
+
+            setTimeout(function(pingScanHack1){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">64 bytes from server -154.234.69.173-silk-road.onion</h5>
+            `;
+            }, 4000);
+
+            setTimeout(function(pingScanHack2){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">64 bytes from server -154.234.69.173-silk-road.onion</h5>
+            `;
+            }, 6000);
+
+            setTimeout(function(pingScanHack3){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">ping stopped and done: 3 packets recieved, servers up and running</h5>
+            `;
+            }, 8000);
+          
+            setTimeout(function(pingScanHack4){
+            outputDiv.innerHTML += `
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
+            `;
+            }, 8500);
+          
+          }if(userInput.value == "ping leaksfinder.onion"){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">Sending request...</h5>
+            
+            `;
+
+            setTimeout(function(pingScanHack){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">64 bytes from server -leaksfinder.onion</h5>
+            `;
+            }, 2000);
+
+            setTimeout(function(pingScanHack1){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">64 bytes from server -leaksfinder.onion</h5>
+            `;
+            }, 4000);
+
+            setTimeout(function(pingScanHack2){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">64 bytes from server -leaksfinder.onion</h5>
+            `;
+            }, 6000);
+
+            setTimeout(function(pingScanHack3){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">ping stopped and done: 3 packets recieved, servers up and running</h5>
+            `;
+            }, 8000);
+          
+            setTimeout(function(pingScanHack4){
+            outputDiv.innerHTML += `
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
+            `;
+            }, 8500);
+          
+          }
+
+        }
+
+          /* ls, cat, sudo and cd commands */
+
+        function lsCatCdCommand(){
+          if(userInput.value == "ls" && voidLoginTrue == true){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">documents</h5>
+            <h5 class="html-Code-Home-White">web.folder</h5>
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
+            
+          `;
+          }if(userInput.value == "ls help" && voidLoginTrue == true){
+          outputDiv.innerHTML += `
+          <h5 class="html-Code-Home-White">ls is used to see the contents of the directory you are in</h5>
+          <h5 class="html-Code-Home-White">But here you can only ls to /index.html</h5>
+          <h5 class="html-Code-Home-White">Maybe you can "ls (folder name)" or "ls(file name)? i dont remember honestly.."</h5>
+          <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
+          `;
+
+          }if(userInput.value == "cd documents" && voidLoginTrue == true){
+          outputDiv.innerHTML += `
+          <h5 class="html-Code-Home-White">nmap.program</h5>
+          <h5 class="html-Code-Home-White">tor.program</h5>
+          <h5 id="html-Code-Home">Void@linux-desktop:/index.html/Programs.folder:</h5>
+
+          `;
+          }if(userInput.value == "cd web.folder" && voidLoginTrue == true){
+          outputDiv.innerHTML += `
+          <h5 class="html-Code-Home-White">websites.txt</h5>
+          
+          <h5 id="html-Code-Home">Void@linux-desktop:/index.html/web.folder:</h5>
+
+          `;
+
+          }if(userInput.value == "cd .." && voidLoginTrue == true){
+            outputDiv.innerHTML += `
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
+            
+          `;
+
+            /* cat commands start */
+          }if(userInput.value == "cat About.html" && voidLoginTrue == true){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">About.html is a page, cant reach it with "cat"</h5>
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
+            `;
+          }if(userInput.value == "cat News.html" && voidLoginTrue == true){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">News.html is a page, cant reach it with "cat"</h5>
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
+            `;
+          }if(userInput.value == "cat Decryption.html" && voidLoginTrue == true){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">Decryption.html is a page, cant reach it with "cat"</h5>
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
+            `;
+
+          }if(userInput.value == "cat lore.html" && voidLoginTrue == true){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">lore.html is a page, cant reach it with "cat"</h5>
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
+            `;
+
+            /* WEBSITE LIST TXT */
+          }if(userInput.value == "sudo cat websites.txt" && voidLoginTrue == true){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White"></h5>
+            <h5 class="html-Code-Home-White">voidcrypt.org/about</h5>
+            <h5 class="html-Code-Home-White">voidcrypt.org/decryption</h5>
+            <h5 class="html-Code-Home-White">silk-road.onion</h5>
+            <h5 class="html-Code-Home-White">voidcrypt.org/news</h5>
+
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html/web.folder/websites.txt:</h5>
+            `;
+
+          }if(userInput.value == "cat websites.txt" && voidLoginTrue == true){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">You dont have permission</h5>
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
+            `;
+
+          }if(userInput.value == "cat" && voidLoginTrue == true){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">Cat(concatenate) command is very frequently used in Linux. It reads data from the file and gives its content as output</h5>
+            <h5 class="html-Code-Home-White">This must be used to see contents inside an .file</h5>
+            <h5 class="html-Code-Home-White">and you only can be inside directory "Void@linux-desktop:/index.html:" when being in the mainpage (which is where the terminal is)</h5>
+            <h5 class="html-Code-Home-White">Or maybe you can go to other directories? I dont remember... I get lost in the code sometimes</h5>
+            <h5 class="html-Code-Home-White">Hard to explaid the usage of this terminal without giving tips that can ruin one of your tasks :(</h5>
+            <h5 class="html-Code-Home-White">I can say that you can still try to combine the "cd" command to a direc..... d4H k21Af I9 asFG3A.... ERROR (69)</h5>
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
+            `;
+          }if(userInput.value =="cat Programs.folder" && voidLoginTrue == true){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">You cant cat into a folder</h5>
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
+            `;
+          }if(userInput.value == "sudo" && voidLoginTrue == true){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">The "sudo" command are used to do task where the normal user dont have permission</h5>
+            <h5 class="html-Code-Home-White">Syntax:</h5>
+            <h5 class="html-Code-Home-White">"sudo" "command"</h5>
+
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
+            `;
+          }
+          
+        
+        }
+
+        /* START TASKS/FLAGS COMMANDS */
+
+        function tasksFlags(){
+          if(userInput.value == "FLAG(hackedUserSilkRoad)"){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">You have solved hunting task 0002!</h5>
+            <h5 class="html-Code-Home-White">Rank: Hacker</h5>
+            <h5 class="html-Code-Home-White">Send an mail to voidcrypt@hotmail.com and write the following:</h5>
+            <h5 class="html-Code-Home-White">hunting task 0002 solved</h5>
+            <h5 class="html-Code-Home-White">FLAG(hackedUserSilkRoad)</h5>
+            <h5 class="html-Code-Home-White">And a name you want to be displayed on a leaderboard</h5>
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
+            `;
+          }
+        }
+
+
+        /* Start programs commands */
+
+        function startPrograms(){
+          if(userInput.value == "start tor.program"){
+            document.getElementById("torBrowser");
+            torBrowser = torBrowser + 1;
+            
+          }
+          torRunning();
+        }
+
+        function torRunning(){
+          if(torBrowser == 1 && userInput.value == "start tor.program"){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">Starting tor.program...</h5>
+            `;
+
+            setTimeout(function(pingScanHack){
+            outputDiv.innerHTML += `
+            <h5 class="html-Code-Home-White">Tor browser running, you can now enter the dark web</h5>
+            <h5 class="html-Code-Home-White">Which means you get access to url's ending with ".onion"</h5>
+            <h5 class="html-Code-Home-White">If you type "clear" in terminal or refresh the site, Tor will stop running</h5>
+            <h5 class="html-Code-Home-White">Remember that you need to start the Tor.program in the flamefox browser!</h5>
+            <h5 id="html-Code-Home">Void@linux-desktop:/index.html:</h5>
+            `;
+            
+            }, 3000);
+
+            setTimeout(function(pingScanHack1){
+            outputDiv1.innerHTML += `
+            <input id="pulsate-Text" type="text" value="TOR IS RUNNING">
+            
+            `;
+            
+            }, 3200);
+
+            
+            
+          }else if(torBrowser >= 1 && userInput.value == "start tor.program"){
+            alert("Tor was already running! Tor has shutdown");
+            document. location. reload()
+          }
+          
+        }
+
+        /* Randome eget */
+        function startNuniz(){
+          if(userInput.value == "start nuniz.exe"){
+            window.location.href = "nuniz.html";
+            
+          }
+          
+        }
+
+        /* Randome eget slutt */
+
+        function exitTerminal(){
+          window.location.href = "desktop.html";
+        }
+
+        enterBtn.addEventListener('click',() => {    
+        terminalFunction();
+        nmapCommand();  
+        pingCommand();  
+        lsCatCdCommand();
+        startPrograms();
+        tasksFlags();
+        startNuniz();
+
+        });
+
+
+        
+      </script>
+      
+
+    </Div>
+  </body>
+</html>

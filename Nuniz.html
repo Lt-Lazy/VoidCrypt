@@ -7,7 +7,7 @@
 </head>
 <body style="background-color: rgb(255, 255, 255);">
 
-    <!-- Burgunder bakgrunn div -->
+    <!-- Burgunder bakgrunn div --> 
     
     <div id="nunizBakgrunnChange" style="
         border-color: black;
@@ -40,6 +40,11 @@
             ">
 
             <input onclick="openDiktColl()" type="button" name="" value="&hearts;Dikt Collectr&hearts;" id="startMenu" style="
+            text-align: center;
+
+            ">
+
+            <input onclick="openDiktAug24()" type="button" name="" value="&hearts;Dikt Aug24&hearts;" id="startMenu" style="
             text-align: center;
 
             ">
@@ -491,12 +496,111 @@
                     `;
                 }, 47000);
 
-                
-                    
-                
-                
 
             }
+
+            function openDiktAug24(){
+                outPutDiv.innerHTML = `
+                <h3>Mine dager før våres tid var nøytrale og fine. </h3>
+                <h3>Personlig hadde jeg verken problemer eller skader som var til noen betydning. </h3>
+                <h3>De siste årene før vi møttes var jeg alene, men følelsen av ensomhet var ikke tilstede. </h3>
+                <h3>Før vi møttes hadde jeg det bra, men jeg var ikke glad. </h3>
+                <h3>Før vi møttes visste jeg om fargen rød, men ikke om burgunder. </h3>
+                <h3>Jeg hadde lagd lasagne mange ganger, men ikke lasagne suppe. </h3>
+                <h3>Jeg trodde ikke på engler eller en sjelevenn. </h3>
+                <h3>Jeg angrer fortsatt på at jeg ikke hadde med roser. </h3>
+
+                <input onclick="openDiktAug24Part2()" type="button" name="" value="&hearts;Neste&hearts;" id="startMenu" style="
+                text-align: center;
+
+                ">
+                
+                
+                `;
+
+            }
+
+            function openDiktAug24Part2(){
+                outPutDiv.innerHTML = `
+                <h3>Mine dager før våres tid var nøytrale og fine. </h3>
+                <h3>Personlig hadde jeg verken problemer eller skader som var til noen betydning. </h3>
+                <h3>De siste årene før vi møttes var jeg alene, men følelsen av ensomhet var ikke tilstede. </h3>
+                <h3>Før vi møttes hadde jeg det bra, men jeg var ikke glad. </h3>
+                <h3>Før vi møttes visste jeg om fargen rød, men ikke om burgunder. </h3>
+                <h3>Jeg hadde lagd lasagne mange ganger, men ikke lasagne suppe. </h3>
+                <h3>Jeg trodde ikke på engler eller en sjelevenn. </h3>
+                <h3>Jeg angrer fortsatt på at jeg ikke hadde med roser. </h3>
+
+                
+
+                <h3>Da vi først møttes. </h3>
+                <h3>Så var det ikke et spørsmål. </h3>
+                <h3>Jeg var ikke usikker. </h3>
+                <h3>Da jeg kom inn døren og du trodde jeg skulle være lavere så lot jeg merke til smilet ditt. </h3>
+                <h3>Da du forklarte at ovnen ikke fungerte ordentlig så stirret jeg på håret ditt. </h3>
+                <h3>Mens du viste møblene på soverommet ditt så lot jeg merke til skjønnhetsflekken din. </h3>
+                <h3>Mens du forklarte hvordan flyttingen gikk, så tenkte jeg på den ekstra tannbørsten du hadde kjøpt til vårt første møtet. </h3>
+                
+                <input onclick="openDiktAug24Part3()" type="button" name="" value="&hearts;Neste&hearts;" id="startMenu" style="
+                text-align: center;
+
+                ">
+                
+                `;
+            }
+
+            function openDiktAug24Part3(){
+                outPutDiv.innerHTML = `
+                <h1>Jeg er ikke alene lenger.</h1>
+                <h1>Jeg er glad. </h1>
+                <h1>Jeg tror fortsatt ikke på engler. </h1>
+                <h1>Men jeg har funnet min sjelevenn. </h1>
+                
+                <input onclick="openDiktAug24PartTilbake()" type="button" name="" value="&hearts;Tilbake&hearts;" id="startMenu" style="
+                text-align: center;
+
+                ">
+
+                <input onclick="svarHome()" type="button" name="" value="&hearts;Hjemeside&hearts;" id="startMenu" style="
+                text-align: center;
+
+                ">
+
+                `;
+
+            }
+
+            function openDiktAug24PartTilbake(){
+                outPutDiv.innerHTML = `
+                
+                <h3>Mine dager før våres tid var nøytrale og fine. </h3>
+                <h3>Personlig hadde jeg verken problemer eller skader som var til noen betydning. </h3>
+                <h3>De siste årene før vi møttes var jeg alene, men følelsen av ensomhet var ikke tilstede. </h3>
+                <h3>Før vi møttes hadde jeg det bra, men jeg var ikke glad. </h3>
+                <h3>Før vi møttes visste jeg om fargen rød, men ikke om burgunder. </h3>
+                <h3>Jeg hadde lagd lasagne mange ganger, men ikke lasagne suppe. </h3>
+                <h3>Jeg trodde ikke på engler eller en sjelevenn. </h3>
+                <h3>Jeg angrer fortsatt på at jeg ikke hadde med roser. </h3>
+
+                
+
+                <h3>Da vi først møttes. </h3>
+                <h3>Så var det ikke et spørsmål. </h3>
+                <h3>Jeg var ikke usikker. </h3>
+                <h3>Da jeg kom inn døren og du trodde jeg skulle være lavere så lot jeg merke til smilet ditt. </h3>
+                <h3>Da du forklarte at ovnen ikke fungerte ordentlig så stirret jeg på håret ditt. </h3>
+                <h3>Mens du viste møblene på soverommet ditt så lot jeg merke til skjønnhetsflekken din. </h3>
+                <h3>Mens du forklarte hvordan flyttingen gikk, så tenkte jeg på den ekstra tannbørsten du hadde kjøpt til vårt første møtet. </h3>
+                
+                <input onclick="openDiktAug24Part3()" type="button" name="" value="&hearts;Neste&hearts;" id="startMenu" style="
+                text-align: center;
+
+                ">
+
+                `;
+
+            }
+
 
             function svarHome(){
                 location.reload();

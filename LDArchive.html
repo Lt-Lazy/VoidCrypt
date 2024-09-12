@@ -191,6 +191,7 @@ body {
             <button class="dropbtn">Geography</button>
             <div class="dropdown-content">
               
+              <a onclick="openOriginCity()">Origin city</a>
               <a onclick="openNewBeginnings()">NB city</a>
               <a onclick="openHugeWall()">Great Outer wall</a>
               <a onclick="openTheFutureCity()">TF city</a>
@@ -227,7 +228,9 @@ body {
         <div class="card" style="color: rgb(196, 196, 196);">
           
           
-    
+
+
+
         </div>
     
       </div>
@@ -236,7 +239,7 @@ body {
 
       --Link i text til artikkel:
 
-      <p style="color: rgb(0, 118, 24);" href="" onclick="openCurrency()" >Currency</p>
+      <a style="color: green;" onclick="openNetherHighway()">Nether highway</a>
 
 
       --ny artikkel:
@@ -370,6 +373,7 @@ function openNewBeginnings(){
             <button class="dropbtn">Geography</button>
             <div class="dropdown-content">
               
+              <a onclick="openOriginCity()">Origin city</a>
               <a onclick="openNewBeginnings()">NB city</a>
               <a onclick="openHugeWall()">Great Outer wall</a>
               <a onclick="openTheFutureCity()">TF city</a>
@@ -454,6 +458,7 @@ function openHugeWall(){
             <button class="dropbtn">Geography</button>
             <div class="dropdown-content">
               
+              <a onclick="openOriginCity()">Origin city</a>
               <a onclick="openNewBeginnings()">NB city</a>
               <a onclick="openHugeWall()">Great Outer wall</a>
               <a onclick="openTheFutureCity()">TF city</a>
@@ -538,6 +543,7 @@ function openCourtHouse(){
             <button class="dropbtn">Geography</button>
             <div class="dropdown-content">
               
+              <a onclick="openOriginCity()">Origin city</a>
               <a onclick="openNewBeginnings()">NB city</a>
               <a onclick="openHugeWall()">Great Outer wall</a>
               <a onclick="openTheFutureCity()">TF city</a>
@@ -619,7 +625,8 @@ function openCurrency(){
           <div class="dropdown">
             <button class="dropbtn">Geography</button>
             <div class="dropdown-content">
-              
+
+              <a onclick="openOriginCity()">Origin city</a>
               <a onclick="openNewBeginnings()">NB city</a>
               <a onclick="openHugeWall()">Great Outer wall</a>
               <a onclick="openTheFutureCity()">TF city</a>
@@ -699,6 +706,7 @@ function openTheFutureCity(){
             <button class="dropbtn">Geography</button>
             <div class="dropdown-content">
               
+              <a onclick="openOriginCity()">Origin city</a>
               <a onclick="openNewBeginnings()">NB city</a>
               <a onclick="openHugeWall()">Great Outer wall</a>
               <a onclick="theFutureCity()">TF city</a>
@@ -777,6 +785,7 @@ function openNetherHighway(){
         <button class="dropbtn">Geography</button>
         <div class="dropdown-content">
           
+          <a onclick="openOriginCity()">Origin city</a>
           <a onclick="openNewBeginnings()">NB city</a>
           <a onclick="openHugeWall()">Great Outer wall</a>
           <a onclick="theFutureCity()">TF city</a>
@@ -819,6 +828,90 @@ function openNetherHighway(){
     <div class="fakeimg" style="height:400px; background-image: url(Images/NetherHighwayVoidMC2.png); background-size: cover;"></div>
     <p>This highway is expanding continually and connects almost every main town, biome, generated structure and points of interest.</p>
     <div class="fakeimg" style="height:400px; background-image: url(Images/NetherHighwayVoidMC.png); background-size: cover;"></div>
+    <p>Nether Hub:</p>
+    <div class="fakeimg" style="height:400px; background-image: url(Images/LDSMPNetherHub.png); background-size: cover;"></div>
+    
+    </div>
+
+  </div>
+
+<div style="color: white; text-align: start;" class="footer">
+    <h2>LD SMP</h2>
+    <p>VoidCrypt</p>
+</div>
+
+`;
+
+}
+
+function openOriginCity(){
+  output.innerHTML = `
+
+<div class="header">
+  <h1 style="color: white;">LD Archive Wiki</h1>
+  <p style="color: white;">History and tracking</p>
+  <img src="Images/VoidCryptLogo.jpg" width="60px" alt="" style="border-radius: 50%;">
+</div>
+
+<div class="topnav">
+  <a href="MC.html">Home</a>
+  
+
+</div>
+
+<div class="leftcolumn">
+    <div class="card" style="color: rgb(196, 196, 196);">
+      
+      <h1>History Archive</h1>
+
+      <div class="dropdown">
+        <button class="dropbtn">Geography</button>
+        <div class="dropdown-content">
+          
+          <a onclick="openOriginCity()">Origin city</a>
+          <a onclick="openNewBeginnings()">NB city</a>
+          <a onclick="openHugeWall()">Great Outer wall</a>
+          <a onclick="theFutureCity()">TF city</a>
+
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Governance</button>
+        <div class="dropdown-content">
+
+          <a onclick="openCurrency()">Currency</a>
+          <a onclick="openCourtHouse()">Court House</a>
+
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn">Construction</button>
+        <div class="dropdown-content">
+          <a onclick="openNetherHighway()">Nether Highway</a>
+          
+          
+        </div>
+      </div>
+
+      
+
+    </div>
+
+  </div>
+
+  <div class="leftcolumn">
+    <div class="card" style="color: rgb(196, 196, 196);">
+
+    <h1>Origin City (2020)</h1>
+      <p>Origin city was the first big organized city established on the server. The start of the settlement was created by the first 7 core members. The first part of the city was the building inside the inner wall, which can be partly seen in the picture below. <a style="color: green;" onclick="openHugeWall()">The greate wall</a> surrounding the whole city was created at a later point. </p>
+      <div class="fakeimg" style="height:400px; background-image: url(Images/LDSMPOriginCity.png); background-size: cover;"></div>
+      
+      <p>This big lively city contains homes, shops, <a style="color: green;" onclick="openCurrency()">Bank</a>, <a style="color: green;" onclick="openCourtHouse()">Court house</a>, farms, villagers, <a style="color: green;" onclick="openNetherHighway()">Nether hub</a>, animals and much more.</p>
+      <div class="fakeimg" style="height:400px; background-image: url(Images/LDSMPOriginCityMap.png); background-size: cover;"></div>
+      <p>There are some buildings on the outside of the city, but every main part of this city is located inside <a style="color: green;" onclick="openHugeWall()">The greate wall</a>.</p>
+      <div class="fakeimg" style="height:400px; background-image: url(Images/LDSMPOriginCity2.png); background-size: cover;"></div>
 
     </div>
 

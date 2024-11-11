@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker Spill</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <style>
+
+        /* Hele skjermen */
+        body {
+            background-image: url(images/world-map-icon-trans.png); /* Sett bakgrunnsbildets sti */
+            background-size: cover; /* Sørger for at bakgrunnen dekker hele skjermen */
+            background-position: center center; /* Plasserer bildet i midten */
+            background-attachment: fixed; /* Får bakgrunnen til å være fast når du scroller */
+            margin: 0; /* Fjern standard margin */
+            padding: 0; /* Fjern padding */
+            height: 100vh; /* Sørger for at kroppen dekker hele høyden på skjermen */
+            font-family: Arial, sans-serif; /* Eksempel på font */
+        }
+
+        #content {
+            position: relative;
+            z-index: 2;
+            color: white; /* Hvite tekstfarge for synlighet */
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        /* Toolbar øverst */
+        #toolbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent svart bakgrunn */
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Midt på siden */
+        #clickerContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        /* Bildet som kan klikkes */
+        #clickImage {
+            cursor: pointer;
+            width: 200px;
+            height: 200px;
+            transition: transform 0.1s;
+            border-radius: 50%;
+        }
+
+        #clickImage {
+        margin-top: 300px;
+        }
+
+        /* Sidepanel for oppgraderinger */
+        #upgradePanel {
+            position: absolute;
+            right: 20px;
+            top: 100px;
+            width: 200px;
+            background-color: #444;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        #upgradePanel h3 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        #upgradeList {
+            list-style: none;
+            padding: 0;
+        }
+
+        .upgrade {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #555;
+            text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .upgrade.disabled {
+            background-color: #777;
+            cursor: not-allowed;
+        }
+
+        /* Animert tekst som viser clickPower */
+        .clickPowerEffect {
+            position: absolute;
+            color: #FF6347; /* Lys rød farge */
+            font-weight: bold;
+            pointer-events: none;
+            animation: floatUp 1s ease-out forwards;
+        }
+
+        /* Stil for animert tekst som viser clickPower */
+        .clickPowerEffect {
+            position: absolute;
+            color: #FF6347; /* Lys rød farge */
+            font-weight: bold;
+            pointer-events: none;
+            animation: floatUp 1s ease-out forwards;
+        }
+
+        /* Stil for animert tekst som viser autoclicker-power */
+        .autoClickerEffect {
+            position: absolute;
+            color: #FF6347; /* Grønn farge for å indikere autoclicker-effekten */
+            font-weight: bold;
+            pointer-events: none;
+            animation: floatUp 1s ease-out forwards;
+        }
+
+        /* Animasjon for clickPower-tekst som flyr opp og blir gjennomsiktig */
+        @keyframes floatUp {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+        }
+
+
+
+    </style>
+
+        
+
+    <!-- Toolbar øverst med antall klikk og spilletid -->
+    <div id="toolbar">
+        <h1>Cypts: <span id="clickCount">0</span></h1>
+        <h2>Playtime: <span id="timePlayed">0</span> sec</h2>
+
+    </div>
+
+    <!-- Midt på siden, et bilde som kan klikkes -->
+    <div id="clickerContainer">
+        <img src="images/server-icon.jpg" alt="Klikk meg" id="clickImage">
+    </div>
+
+    <!-- Sidepanel for oppgraderinger -->
+    <div id="upgradePanel">
+        <h3>Oppgraderinger</h3>
+        <ul id="upgradeList">
+            <!-- Dynamisk genererte oppgraderingsknapper legges til her -->
+             
+        </ul>
+        <img id="programHover" onclick="exitClicker()" src="Images/red-power-button-icon.png" title="web" alt="" style="
+            width: 0.7cm;
+            border-radius: 50%;
+            padding: 2%;
+            right: 1px;"
+        >
+    </div>
+
+    <script>
+
+        // Initialiser variabler for klikk, tid og klikkstyrke (klikk per trykk)
+        let clickCount = 0;
+        let timePlayed = 0;
+        let clickPower = 1; // Start med 1 klikk per trykk
+        let timerInterval;
+        let autoClickPower = 0; // Hvor mye klikk per sekund autoclickeren gir
+        let autoClickInterval;
+
+        // Oppgraderingsinnstillinger
+        const upgrades = [
+            { id: 1, name: "Upgrade 🚲", cost: 50, increase: 1 },
+            { id: 2, name: "Upgrade 🚗", cost: 1000, increase: 50 },
+            { id: 3, name: "Upgrade 🚐", cost: 1000000, increase: 500 },
+            { id: 4, name: "Upgrade 🚅", cost: 1000000000, increase: 10000 },
+            { id: 5, name: "Upgrade 🚁", cost: 1000000000000, increase: 100000 },
+            { id: 6, name: "Upgrade 🚀", cost: 100000000000000, increase: 1000000 },
+            { id: "autoclicker", name: "Autoclicker", cost: 200, increase: 1 },
+        ];
+
+        // Funksjon for å hente lagret data fra localStorage
+        function loadGameData() {
+            const savedClickCount = localStorage.getItem("clickCount");
+            const savedTimePlayed = localStorage.getItem("timePlayed");
+            const savedClickPower = localStorage.getItem("clickPower");
+
+            if (savedClickCount !== null) {
+                clickCount = parseInt(savedClickCount, 10);
+            }
+            if (savedTimePlayed !== null) {
+                timePlayed = parseInt(savedTimePlayed, 10);
+            }
+            if (savedClickPower !== null) {
+                clickPower = parseInt(savedClickPower, 10);
+            }
+
+            document.getElementById("clickCount").textContent = clickCount;
+            document.getElementById("timePlayed").textContent = timePlayed;
+        }
+
+        function incrementClick() {
+        clickCount += clickPower;
+        document.getElementById("clickCount").textContent = clickCount;
+        localStorage.setItem("clickCount", clickCount);
+
+        renderUpgrades(); // Oppdaterer oppgraderingsknappene etter klikk
+        showClickPowerEffect(); // Viser animert clickPower-verdi
+        removeUpgradeIfNeeded(); // Sjekker om noen oppgraderinger skal fjernes
+        }
+
+        // Funksjon for å oppdatere og lagre spilletiden i sekunder
+        function updateTimePlayed() {
+            timePlayed += 1;
+            document.getElementById("timePlayed").textContent = timePlayed;
+            localStorage.setItem("timePlayed", timePlayed);
+        }
+
+        // Funksjon for å kjøpe en oppgradering
+        function buyUpgrade(upgrade) {
+        if (clickCount >= upgrade.cost) {
+        clickCount -= upgrade.cost;
+
+        if (upgrade.id === "autoclicker") {
+            autoClickPower += upgrade.increase; // Øker autoClickPower
+            updateAutoClicker(); // Oppdaterer intervallet for autoclicker
+        } else {
+            clickPower += upgrade.increase; // Øker vanlig clickPower
+        }
+
+        document.getElementById("clickCount").textContent = clickCount;
+        document.getElementById("clickPowerDisplay").textContent = clickPower;
+        localStorage.setItem("clickCount", clickCount);
+        localStorage.setItem("clickPower", clickPower);
+        localStorage.setItem("autoClickPower", autoClickPower); // Lagre autoClickPower
+
+        
+        renderUpgrades(); // Oppdaterer oppgraderingsknappene etter kjøp
+        }
+        }
+
+        
+
+        function renderUpgrades() {
+        const upgradeList = document.getElementById("upgradeList");
+        upgradeList.innerHTML = ""; // Tømmer listen før den oppdateres
+
+        upgrades.forEach((upgrade) => {
+            const upgradeItem = document.createElement("li");
+            upgradeItem.className = "upgrade";
+            upgradeItem.textContent = `${upgrade.name} (+${upgrade.increase} klikk) - ${upgrade.cost} klikk`;
+
+            if (clickCount < upgrade.cost) {
+                upgradeItem.classList.add("disabled");
+            } else {
+                upgradeItem.onclick = () => buyUpgrade(upgrade);
+            }
+
+            upgradeList.appendChild(upgradeItem);
+        });
+        }
+
+        // Funksjon for å vise animert tekst med clickPower-verdi
+        function showClickPowerEffect() {
+            const clickImage = document.getElementById("clickImage");
+            const effect = document.createElement("div");
+
+            effect.className = "clickPowerEffect";
+            effect.textContent = `+${clickPower}`;
+            
+            // Plasser effekten over bildet
+            effect.style.left = `${clickImage.offsetLeft + clickImage.offsetWidth / 2 - 10}px`;
+            effect.style.top = `${clickImage.offsetTop}px`;
+            
+            document.body.appendChild(effect);
+            
+            // Fjern elementet etter animasjonen er ferdig
+            setTimeout(() => effect.remove(), 1000);
+        }
+
+        // Legg til showClickPowerEffect i incrementClick for å aktivere animasjonen
+        document.getElementById("clickImage").addEventListener("click", () => {
+            incrementClick();
+            showClickPowerEffect();
+        });
+
+        // Funksjon for å fjerne de billigste oppgraderingene når spilleren får nok klikk
+        function removeUpgradeIfNeeded() {
+            upgrades.forEach((upgrade, index) => {
+                // Fjern oppgradering dersom spilleren har minst 10x kostnaden til oppgraderingen
+                if (upgrade.id !== "autoclicker" && clickCount >= upgrade.cost * 100) {
+                    upgrades.splice(index, 1); // Fjern oppgraderingen fra arrayet
+                    renderUpgrades(); // Oppdater oppgraderingslisten
+                }
+            });
+        }
+
+        // Funksjon for å oppdatere autoclickeren
+        function updateAutoClicker() {
+            if (autoClickInterval) clearInterval(autoClickInterval); // Stopper gammel interval om det finnes
+            
+            // Setter opp en ny interval basert på autoClickPower
+            if (autoClickPower > 0) {
+                autoClickInterval = setInterval(() => {
+                    clickCount += autoClickPower;
+                    document.getElementById("clickCount").textContent = clickCount;
+                    localStorage.setItem("clickCount", clickCount);
+                    renderUpgrades();
+                }, 1000); // Kjør hver sekund (1000 ms)
+            }
+        }
+
+
+        // Funksjon for å vise animert tekst med autoClickPower-verdi
+        function showAutoClickerEffect() {
+            const clickImage = document.getElementById("clickImage");
+            const effect = document.createElement("div");
+
+            effect.className = "autoClickerEffect";
+            effect.textContent = `+${autoClickPower}`; // Vist verdi av autoClickPower
+            
+            // Plasser effekten over bildet
+            effect.style.left = `${clickImage.offsetLeft + clickImage.offsetWidth / 2 - 10}px`;
+            effect.style.top = `${clickImage.offsetTop}px`;
+            
+            document.body.appendChild(effect);
+            
+            // Fjern elementet etter animasjonen er ferdig
+            setTimeout(() => effect.remove(), 1000);
+        }
+
+        // Funksjon for å oppdatere autoclickeren
+        function updateAutoClicker() {
+        if (autoClickInterval) clearInterval(autoClickInterval); // Stopper gammel interval om det finnes
+        
+        // Sett autoClickPower i localStorage når den oppdateres
+        localStorage.setItem("autoClickPower", autoClickPower);
+
+        // Hvis autoClickPower er større enn 0, sett opp en ny interval
+        if (autoClickPower > 0) {
+            autoClickInterval = setInterval(() => {
+                clickCount += autoClickPower;
+                document.getElementById("clickCount").textContent = clickCount;
+                localStorage.setItem("clickCount", clickCount);
+
+                renderUpgrades(); // Oppdaterer oppgraderingsknappene etter klikk
+                showAutoClickerEffect(); // Vist animasjon for autoclicker-effekten
+            }, 1000); // Kjør hvert sekund (1000 ms)
+        }
+        }
+
+        
+
+        // Hent autoClickPower fra localStorage når spillet lastes
+        window.onload = () => {
+            loadGameData();
+            renderUpgrades();
+            
+            
+            // Hent autoClickPower fra localStorage
+            autoClickPower = localStorage.getItem("autoClickPower") ? parseInt(localStorage.getItem("autoClickPower")) : 0;
+
+            // Start en intervall som oppdaterer spilletiden hvert sekund
+            timerInterval = setInterval(updateTimePlayed, 1000);
+
+            // Hvis autoClicker er aktiv, start oppdateringen
+            if (autoClickPower > 0) {
+                updateAutoClicker(); // Start autoclicker hvis den er aktiv
+            }
+        };
+        
+
+        function exitClicker(){
+            window.location.href = "desktop.html";
+        }
+
+    // Legger til en klikk-hendelse på bildet for å øke klikk-telleren
+    document.getElementById("clickImage").addEventListener("click", incrementClick);
+
+    </script>
+</body>
+</html>

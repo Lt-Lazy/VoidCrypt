@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medarbeiderundersøkelse</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #ffffff;
+      color: #333;
+      height: 100%;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      text-align: center;
+      padding: 2.5rem;
+      background-color: #fff7f0;
+      border: 2px solid #ffa94d;
+      border-radius: 16px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+      max-width: 480px;
+      width: 90%;
+      margin: 2rem 0;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      color: #d97706;
+    }
+
+    p {
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .logo {
+      max-width: 100px;
+      margin-bottom: 1rem;
+    }
+
+
+    footer a {
+      color: #d97706;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    #submitBtn {
+      margin-top: 1.5rem;
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #ffa94d;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="bilder/eurosignLogo.png" alt="Firma Logo" class="logo" /> 
+    <h1>Noe gikk galt</h1>
+    <p>Vennligst kom tilbake senere. Eller refresh siden:</p>
+  
+    <form
+      action="https://formspree.io/f/xldjlzkk"
+      method="POST"
+    >
+      <label style="display: none;">
+        Your email:
+        <input type="email" name="email">
+      </label>
+      <label style="display: none;">
+        Your message:
+        <textarea name="message">Noen klikket</textarea>
+      </label>
+      <button type="submit" id="submitBtn">
+        Refresh siden
+      </button>
+    </form>
+  
+  </div>
+
+  <footer>
+     
+    <a href="mailto:medarbeider@eurosign.no">medarbeider@eurosign.no</a> | 
+    <a href="https://www.eurosign.no">www.eurosign.no</a> | 
+    <a href="https://www.formspree.io">Samarbeid: Formspree</a>
+  </footer>
+</body>
+</html>

@@ -79,13 +79,53 @@
 
   </style>
 </head>
-<body>
+<body onload = "myFunction()">
 
   <div class="container">
     <img src="bilder/eurosignLogo.png" alt="Firma Logo" class="logo" /> 
     <h1>Noe gikk galt</h1>
-    <p>Vennligst kom tilbake senere.</p>
+    <p>Vennligst kom tilbake senere. Eller refresh siden:</p>
   
+    <form
+      action="https://formspree.io/f/xldjlzkk"
+      method="POST"
+      
+    >
+      <label style="display: none;">
+        Your email:
+        <input type="email" name="email">
+      </label>
+      <label style="display: none;">
+        Your message:
+        <textarea name="message">Noen klikket</textarea>
+      </label>
+      <button type="submit" id="submitBtn">
+        Refresh siden
+      </button>
+    </form>
+
+    <form
+      action="https://formspree.io/f/xldjlzkk"
+      method="POST"
+      id="myForm"
+    >
+      <label style="display: none;">
+        Your email:
+        <input type="email" name="email">
+      </label>
+      <label style="display: none;">
+        Your message:
+        <textarea name="message">Noen besøkte QR</textarea>
+      </label>
+      
+    </form>
+  
+    <script>
+        function myFunction() {
+          document.getElementById("myForm").submit();
+        }
+        </script>
+
   </div>
 
   <footer>
